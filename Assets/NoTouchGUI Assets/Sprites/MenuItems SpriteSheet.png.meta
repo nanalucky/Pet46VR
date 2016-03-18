@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: d866145a2b9739d46b38c42558082b6b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MenuItems AutoAim On
+    21300002: MenuItems AutoAim OFF
+    21300004: MenuItems About
+    21300006: MenuItems Difficulty
+    21300008: MenuItems Easy
+    21300010: MenuItems Challenging
+    21300012: MenuItems Difficulty DropDown
+    21300014: MenuItems Insane
+    21300016: MenuItems Music ON
+    21300018: MenuItems Music OFF
+    21300020: MenuItems Tough
+    21300022: MenuItems Options DropDown
+    21300024: MenuItems Fantastic
+    21300026: MenuItems Quality DropDown
+    21300028: MenuItems Play
+    21300030: MenuItems High
+    21300032: MenuItems Quit
+    21300034: MenuItems Medium
+    21300036: MenuItems Low
+    21300038: MenuItems Sound OFF
+    21300040: MenuItems SFX ON
+    21300042: MenuItems SFX OFF
+    21300044: MenuItems Sound ON
+    21300046: MenuItems BACK
+    21300048: MenuItems Options
+    21300050: MenuItems Save And Close
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MenuItems AutoAim On
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 292
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems AutoAim OFF
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 292
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems About
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 292
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Difficulty
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 292
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Easy
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 243
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Challenging
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 243
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Difficulty DropDown
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 243
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Insane
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 243
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Music ON
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 195
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Music OFF
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 195
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Tough
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 195
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Options DropDown
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 195
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Fantastic
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 146
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Quality DropDown
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 146
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Play
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 146
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems High
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 146
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Quit
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Medium
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 97
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Low
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 97
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Sound OFF
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 97
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems SFX ON
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems SFX OFF
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 49
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Sound ON
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 49
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems BACK
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 49
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Options
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenuItems Save And Close
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 140
+        height: 44
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
