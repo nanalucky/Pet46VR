@@ -1,0 +1,20 @@
+
+
+#################
+## Unity
+#################
+
+Library/
+obj/
+Temp/
+Assembly-CSharp-Editor-vs.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+Pet-csharp.sln
+Pet.sln
+Pet.userprefs
+Assembly-CSharp-firstpass-vs.csproj
+Assembly-CSharp-firstpass.csproj
+Assembly-CSharp-vs.csproj
+Assembly-UnityScript-vs.unityproj
+Assembly-UnityScript.unityproj

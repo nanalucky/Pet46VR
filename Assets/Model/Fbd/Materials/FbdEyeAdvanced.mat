@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FbdEyeAdvanced
+  m_Shader: {fileID: 4800000, guid: 9ced78d5d0a944a44a04627ed5091dbc, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 06910fdcb3468ed44a561276d02c5203, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _IrisColorTex
+        second:
+          m_Texture: {fileID: 2800000, guid: d0430ab935dfe414f9ff96e50824d6f2, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _IrisTex
+        second:
+          m_Texture: {fileID: 2800000, guid: c6921995ffad36c4a85afdb740056d14, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _CorneaBump
+        second:
+          m_Texture: {fileID: 2800000, guid: fb64935e844038c40a4780f4ef1a7693, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EyeBump
+        second:
+          m_Texture: {fileID: 2800000, guid: 81b3acbd0c61e354bb574c92d8fb9da0, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecularCube
+        second:
+          m_Texture: {fileID: 8900000, guid: 485c648ca0bfe054fb20753b2523f7f3, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DiffuseCube
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _pupilSize
+        second: .821428478
+      data:
+        first:
+          name: _irisSize
+        second: 1.21428573
+      data:
+        first:
+          name: _parallax
+        second: 0
+      data:
+        first:
+          name: _scleraSize
+        second: .874107242
+      data:
+        first:
+          name: _brightShift
+        second: 3.25999999
+      data:
+        first:
+          name: _smoothness
+        second: .642857134
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _scleraColor
+        second: {r: .948529422, g: .955503881, b: .955503881, a: 1}
+      data:
+        first:
+          name: _irisColor
+        second: {r: .448529422, g: .349589109, b: .349589109, a: 0}
+      data:
+        first:
+          name: _illumColor
+        second: {r: .367647052, g: .300064862, b: .300064862, a: 0}
+      data:
+        first:
+          name: _subDermColor
+        second: {r: .45588237, g: .419009537, b: .419009537, a: 0}

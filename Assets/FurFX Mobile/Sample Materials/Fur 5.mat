@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Fur 5
+  m_Shader: {fileID: 4800000, guid: 41637ddf8281ee14e917703a61bc9b1f, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: bdcb7942246995549ae868d9438a3a25, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cube
+        second:
+          m_Texture: {fileID: 8900000, guid: d9efb6da673fe1c44bbc592d9f82945d, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NoiseTex
+        second:
+          m_Texture: {fileID: 2800000, guid: d655940120b0a7746b7de29a8c0ed630, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Reflection
+        second: 1
+      data:
+        first:
+          name: _Cutoff
+        second: .15384616
+      data:
+        first:
+          name: _Shininess
+        second: 6.12165213
+      data:
+        first:
+          name: _FurLength
+        second: .084204182
+      data:
+        first:
+          name: _HairHardness
+        second: 1
+      data:
+        first:
+          name: _HairThinness
+        second: 3.36593127
+      data:
+        first:
+          name: _HairShading
+        second: .442307681
+      data:
+        first:
+          name: _HairColoring
+        second: .191979051
+      data:
+        first:
+          name: _SkinAlpha
+        second: 0
+      data:
+        first:
+          name: _EdgeFade
+        second: 0
+      data:
+        first:
+          name: _FurDarkening
+        second: 1.38999999
+      data:
+        first:
+          name: _RimPower
+        second: 4.28846121
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Down
+        second: {r: 0, g: 1, b: 0, a: 0}
+      data:
+        first:
+          name: _LightDirection0
+        second: {r: 0, g: 0, b: -1, a: 0}
+      data:
+        first:
+          name: _MyLightColor0
+        second: {r: .544776082, g: .544776082, b: .544776082, a: .0784313753}
+      data:
+        first:
+          name: _LightDirection1
+        second: {r: 0, g: .84799999, b: .529999971, a: 5.75040907e-18}
+      data:
+        first:
+          name: _MyLightColor1
+        second: {r: .125581756, g: .251529723, b: .38094148, a: 0}
+      data:
+        first:
+          name: _LightDirection
+        second: {r: 1, g: 0, b: 0, a: .200000003}
+      data:
+        first:
+          name: _Dow2n
+        second: {r: 0, g: -1, b: 0, a: 0}
+      data:
+        first:
+          name: _ForceGlobal
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _ForceLocal
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1002 &2100001
+EditorExtensionImpl:
+  serializedVersion: 6

@@ -1,0 +1,1227 @@
+fileFormatVersion: 2
+guid: 13f7264e44e13864987e07f9b7077542
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: air conditioner01
+    100002: air conditioner02
+    100004: artbox1
+    100006: artbox2
+    100008: artchest
+    100010: artwoodwork
+    100012: artwork01
+    100014: artwork02
+    100016: aspirator
+    100018: bed01
+    100020: bed02
+    100022: bed03
+    100024: bed04
+    100026: bedroomdesk1
+    100028: bedside chest01
+    100030: bedside chest02
+    100032: bedside chest03
+    100034: bedside light
+    100036: bell
+    100038: bigwoodwindow
+    100040: bigyellowcarpet
+    100042: bluepillow
+    100044: book01
+    100046: book02
+    100048: book03
+    100050: book04
+    100052: book05
+    100054: book06
+    100056: book07
+    100058: book08
+    100060: book09
+    100062: book10
+    100064: book11
+    100066: bookcase01
+    100068: bookcase02
+    100070: bookroomcarpet
+    100072: bookroomdesk
+    100074: bowl01
+    100076: bowl02
+    100078: bowl03
+    100080: bowl04
+    100082: brownpillow01
+    100084: brownpillow02
+    100086: Buddha
+    100088: bwpillow
+    100090: cabinet01
+    100092: cabinet02
+    100094: ceiling01
+    100096: ceiling02
+    100098: celling_small_light
+    100100: cellinglight
+    100102: chair01
+    100104: clock
+    100106: Cooker
+    100108: curtain
+    100110: cutterbox
+    100112: designbox
+    100114: designed wall
+    100116: desk lamp
+    100118: diningroom carpet
+    100120: dome light01
+    100122: dome light02
+    100124: dome light03
+    100126: door
+    100128: doork
+    100130: doork001
+    100132: doork002
+    100134: doork003
+    100136: doork004
+    100138: doorside
+    100140: dread board
+    100142: dvd
+    100144: dvdchest
+    100146: floor1
+    100148: floor2
+    100150: football
+    100152: fountain
+    100154: fridge
+    100156: gas cooker
+    100158: gas01
+    100160: glassdoor
+    100162: goldpillow
+    100164: graypillow
+    100166: housetop
+    100168: indicator
+    100170: keyset
+    100172: kitchen cabinets
+    100174: kitchendoor01
+    100176: kitchendoor02
+    100178: kitchendoor03
+    100180: kitchendoorframe
+    100182: Ladle
+    100184: line
+    100186: master
+    100188: micr
+    100190: Mouse
+    100192: orange1
+    100194: orange2
+    100196: orange3
+    100198: parlor sofa01
+    100200: parlor sofa02
+    100202: patternpillow01
+    100204: patternpillow02
+    100206: patternpillow03
+    100208: patternpillow04
+    100210: Phone01
+    100212: phone02
+    100214: picture frame01
+    100216: picture frame02
+    100218: pictureframe01
+    100220: pictureframe02
+    100222: Plane012
+    100224: plate
+    100226: pork
+    100228: red pepper01
+    100230: red_design_carpet
+    100232: redcarpet02
+    100234: roomdoor
+    100236: schoolbag
+    100238: shoecase
+    100240: shower
+    100242: showercarpet
+    100244: showerdoor
+    100246: showerglass
+    100248: slipper_left
+    100250: slipper_right
+    100252: smallbox
+    100254: smallchest1
+    100256: smallsofa
+    100258: smallwall1
+    100260: smallwall2
+    100262: smoke cleaner
+    100264: sofa001
+    100266: sofa002
+    100268: sofa003
+    100270: sofa004
+    100272: sofaPillow_red
+    100274: sofaPillow_yellow
+    100276: Sound
+    100278: stairway
+    100280: stockpot
+    100282: table
+    100284: tea table1
+    100286: tea table2
+    100288: tea table3
+    100290: toilet
+    100292: toiletcarpet
+    100294: toiletdoor
+    100296: toy01
+    100298: toy02
+    100300: toy03
+    100302: toy03content
+    100304: tv01
+    100306: tv02
+    100308: tv03
+    100310: tv04
+    100312: tv05
+    100314: tvwall
+    100316: umbrella
+    100318: //RootNode
+    100320: wall1
+    100322: wall2
+    100324: wallline01
+    100326: wallline02
+    100328: wardrobe01
+    100330: wardrobe02
+    100332: wardrobe03
+    100334: wardrobe04
+    100336: wardrobe05
+    100338: wash basin
+    100340: woodwall
+    100342: woodwindow01
+    100344: woodwindow02
+    100346: woodwindow03
+    100348: woodwindow04
+    100350: woodwindow05
+    100352: woodwindow06
+    100354: woodwindow07
+    100356: woodwindow08
+    100358: woodwindow09
+    100360: woodwindow10
+    100362: woodwindow11
+    100364: woodwindow12
+    100366: writing case
+    100368: yellow pepper
+    100370: Box001
+    100372: midwall
+    100374: midwall001
+    100376: handrailff
+    100378: windowf1
+    100380: windowf2
+    100382: windowf3
+    100384: Plane013
+    100386: Plane014
+    100388: Plane015
+    400000: air conditioner01
+    400002: air conditioner02
+    400004: artbox1
+    400006: artbox2
+    400008: artchest
+    400010: artwoodwork
+    400012: artwork01
+    400014: artwork02
+    400016: aspirator
+    400018: bed01
+    400020: bed02
+    400022: bed03
+    400024: bed04
+    400026: bedroomdesk1
+    400028: bedside chest01
+    400030: bedside chest02
+    400032: bedside chest03
+    400034: bedside light
+    400036: bell
+    400038: bigwoodwindow
+    400040: bigyellowcarpet
+    400042: bluepillow
+    400044: book01
+    400046: book02
+    400048: book03
+    400050: book04
+    400052: book05
+    400054: book06
+    400056: book07
+    400058: book08
+    400060: book09
+    400062: book10
+    400064: book11
+    400066: bookcase01
+    400068: bookcase02
+    400070: bookroomcarpet
+    400072: bookroomdesk
+    400074: bowl01
+    400076: bowl02
+    400078: bowl03
+    400080: bowl04
+    400082: brownpillow01
+    400084: brownpillow02
+    400086: Buddha
+    400088: bwpillow
+    400090: cabinet01
+    400092: cabinet02
+    400094: ceiling01
+    400096: ceiling02
+    400098: celling_small_light
+    400100: cellinglight
+    400102: chair01
+    400104: clock
+    400106: Cooker
+    400108: curtain
+    400110: cutterbox
+    400112: designbox
+    400114: designed wall
+    400116: desk lamp
+    400118: diningroom carpet
+    400120: dome light01
+    400122: dome light02
+    400124: dome light03
+    400126: door
+    400128: doork
+    400130: doork001
+    400132: doork002
+    400134: doork003
+    400136: doork004
+    400138: doorside
+    400140: dread board
+    400142: dvd
+    400144: dvdchest
+    400146: floor1
+    400148: floor2
+    400150: football
+    400152: fountain
+    400154: fridge
+    400156: gas cooker
+    400158: gas01
+    400160: glassdoor
+    400162: goldpillow
+    400164: graypillow
+    400166: housetop
+    400168: indicator
+    400170: keyset
+    400172: kitchen cabinets
+    400174: kitchendoor01
+    400176: kitchendoor02
+    400178: kitchendoor03
+    400180: kitchendoorframe
+    400182: Ladle
+    400184: line
+    400186: master
+    400188: micr
+    400190: Mouse
+    400192: orange1
+    400194: orange2
+    400196: orange3
+    400198: parlor sofa01
+    400200: parlor sofa02
+    400202: patternpillow01
+    400204: patternpillow02
+    400206: patternpillow03
+    400208: patternpillow04
+    400210: Phone01
+    400212: phone02
+    400214: picture frame01
+    400216: picture frame02
+    400218: pictureframe01
+    400220: pictureframe02
+    400222: Plane012
+    400224: plate
+    400226: pork
+    400228: red pepper01
+    400230: red_design_carpet
+    400232: redcarpet02
+    400234: roomdoor
+    400236: schoolbag
+    400238: shoecase
+    400240: shower
+    400242: showercarpet
+    400244: showerdoor
+    400246: showerglass
+    400248: slipper_left
+    400250: slipper_right
+    400252: smallbox
+    400254: smallchest1
+    400256: smallsofa
+    400258: smallwall1
+    400260: smallwall2
+    400262: smoke cleaner
+    400264: sofa001
+    400266: sofa002
+    400268: sofa003
+    400270: sofa004
+    400272: sofaPillow_red
+    400274: sofaPillow_yellow
+    400276: Sound
+    400278: stairway
+    400280: stockpot
+    400282: table
+    400284: tea table1
+    400286: tea table2
+    400288: tea table3
+    400290: toilet
+    400292: toiletcarpet
+    400294: toiletdoor
+    400296: toy01
+    400298: toy02
+    400300: toy03
+    400302: toy03content
+    400304: tv01
+    400306: tv02
+    400308: tv03
+    400310: tv04
+    400312: tv05
+    400314: tvwall
+    400316: umbrella
+    400318: //RootNode
+    400320: wall1
+    400322: wall2
+    400324: wallline01
+    400326: wallline02
+    400328: wardrobe01
+    400330: wardrobe02
+    400332: wardrobe03
+    400334: wardrobe04
+    400336: wardrobe05
+    400338: wash basin
+    400340: woodwall
+    400342: woodwindow01
+    400344: woodwindow02
+    400346: woodwindow03
+    400348: woodwindow04
+    400350: woodwindow05
+    400352: woodwindow06
+    400354: woodwindow07
+    400356: woodwindow08
+    400358: woodwindow09
+    400360: woodwindow10
+    400362: woodwindow11
+    400364: woodwindow12
+    400366: writing case
+    400368: yellow pepper
+    400370: Box001
+    400372: midwall
+    400374: midwall001
+    400376: handrailff
+    400378: windowf1
+    400380: windowf2
+    400382: windowf3
+    400384: Plane013
+    400386: Plane014
+    400388: Plane015
+    2300000: air conditioner01
+    2300002: air conditioner02
+    2300004: artbox1
+    2300006: artbox2
+    2300008: artchest
+    2300010: artwoodwork
+    2300012: artwork01
+    2300014: artwork02
+    2300016: aspirator
+    2300018: bed01
+    2300020: bed02
+    2300022: bed03
+    2300024: bed04
+    2300026: bedroomdesk1
+    2300028: bedside chest01
+    2300030: bedside chest02
+    2300032: bedside chest03
+    2300034: bedside light
+    2300036: bell
+    2300038: bigwoodwindow
+    2300040: bigyellowcarpet
+    2300042: bluepillow
+    2300044: book01
+    2300046: book02
+    2300048: book03
+    2300050: book04
+    2300052: book05
+    2300054: book06
+    2300056: book07
+    2300058: book08
+    2300060: book09
+    2300062: book10
+    2300064: book11
+    2300066: bookcase01
+    2300068: bookcase02
+    2300070: bookroomcarpet
+    2300072: bookroomdesk
+    2300074: bowl01
+    2300076: bowl02
+    2300078: bowl03
+    2300080: bowl04
+    2300082: brownpillow01
+    2300084: brownpillow02
+    2300086: Buddha
+    2300088: bwpillow
+    2300090: cabinet01
+    2300092: cabinet02
+    2300094: ceiling01
+    2300096: ceiling02
+    2300098: celling_small_light
+    2300100: cellinglight
+    2300102: chair01
+    2300104: clock
+    2300106: Cooker
+    2300108: curtain
+    2300110: cutterbox
+    2300112: designbox
+    2300114: designed wall
+    2300116: desk lamp
+    2300118: diningroom carpet
+    2300120: dome light01
+    2300122: dome light02
+    2300124: dome light03
+    2300126: door
+    2300128: doork
+    2300130: doork001
+    2300132: doork002
+    2300134: doork003
+    2300136: doork004
+    2300138: doorside
+    2300140: dread board
+    2300142: dvd
+    2300144: dvdchest
+    2300146: floor1
+    2300148: floor2
+    2300150: football
+    2300152: fountain
+    2300154: fridge
+    2300156: gas cooker
+    2300158: gas01
+    2300160: glassdoor
+    2300162: goldpillow
+    2300164: graypillow
+    2300166: housetop
+    2300168: indicator
+    2300170: keyset
+    2300172: kitchen cabinets
+    2300174: kitchendoor01
+    2300176: kitchendoor02
+    2300178: kitchendoor03
+    2300180: kitchendoorframe
+    2300182: Ladle
+    2300184: line
+    2300186: master
+    2300188: micr
+    2300190: Mouse
+    2300192: orange1
+    2300194: orange2
+    2300196: orange3
+    2300198: parlor sofa01
+    2300200: parlor sofa02
+    2300202: patternpillow01
+    2300204: patternpillow02
+    2300206: patternpillow03
+    2300208: patternpillow04
+    2300210: Phone01
+    2300212: phone02
+    2300214: picture frame01
+    2300216: picture frame02
+    2300218: pictureframe01
+    2300220: pictureframe02
+    2300222: Plane012
+    2300224: plate
+    2300226: pork
+    2300228: red pepper01
+    2300230: red_design_carpet
+    2300232: redcarpet02
+    2300234: roomdoor
+    2300236: schoolbag
+    2300238: shoecase
+    2300240: shower
+    2300242: showercarpet
+    2300244: showerdoor
+    2300246: showerglass
+    2300248: slipper_left
+    2300250: slipper_right
+    2300252: smallbox
+    2300254: smallchest1
+    2300256: smallsofa
+    2300258: smallwall1
+    2300260: smallwall2
+    2300262: smoke cleaner
+    2300264: sofa001
+    2300266: sofa002
+    2300268: sofa003
+    2300270: sofa004
+    2300272: sofaPillow_red
+    2300274: sofaPillow_yellow
+    2300276: Sound
+    2300278: stairway
+    2300280: stockpot
+    2300282: table
+    2300284: tea table1
+    2300286: tea table2
+    2300288: tea table3
+    2300290: toilet
+    2300292: toiletcarpet
+    2300294: toiletdoor
+    2300296: toy01
+    2300298: toy02
+    2300300: toy03
+    2300302: toy03content
+    2300304: tv01
+    2300306: tv02
+    2300308: tv03
+    2300310: tv04
+    2300312: tv05
+    2300314: tvwall
+    2300316: umbrella
+    2300318: wall1
+    2300320: wall2
+    2300322: wallline01
+    2300324: wallline02
+    2300326: wardrobe01
+    2300328: wardrobe02
+    2300330: wardrobe03
+    2300332: wardrobe04
+    2300334: wardrobe05
+    2300336: wash basin
+    2300338: woodwall
+    2300340: woodwindow01
+    2300342: woodwindow02
+    2300344: woodwindow03
+    2300346: woodwindow04
+    2300348: woodwindow05
+    2300350: woodwindow06
+    2300352: woodwindow07
+    2300354: woodwindow08
+    2300356: woodwindow09
+    2300358: woodwindow10
+    2300360: woodwindow11
+    2300362: woodwindow12
+    2300364: writing case
+    2300366: yellow pepper
+    2300368: Box001
+    2300370: midwall
+    2300372: midwall001
+    2300374: handrailff
+    2300376: windowf1
+    2300378: windowf2
+    2300380: windowf3
+    2300382: Plane013
+    2300384: Plane014
+    2300386: Plane015
+    3300000: air conditioner01
+    3300002: air conditioner02
+    3300004: artbox1
+    3300006: artbox2
+    3300008: artchest
+    3300010: artwoodwork
+    3300012: artwork01
+    3300014: artwork02
+    3300016: aspirator
+    3300018: bed01
+    3300020: bed02
+    3300022: bed03
+    3300024: bed04
+    3300026: bedroomdesk1
+    3300028: bedside chest01
+    3300030: bedside chest02
+    3300032: bedside chest03
+    3300034: bedside light
+    3300036: bell
+    3300038: bigwoodwindow
+    3300040: bigyellowcarpet
+    3300042: bluepillow
+    3300044: book01
+    3300046: book02
+    3300048: book03
+    3300050: book04
+    3300052: book05
+    3300054: book06
+    3300056: book07
+    3300058: book08
+    3300060: book09
+    3300062: book10
+    3300064: book11
+    3300066: bookcase01
+    3300068: bookcase02
+    3300070: bookroomcarpet
+    3300072: bookroomdesk
+    3300074: bowl01
+    3300076: bowl02
+    3300078: bowl03
+    3300080: bowl04
+    3300082: brownpillow01
+    3300084: brownpillow02
+    3300086: Buddha
+    3300088: bwpillow
+    3300090: cabinet01
+    3300092: cabinet02
+    3300094: ceiling01
+    3300096: ceiling02
+    3300098: celling_small_light
+    3300100: cellinglight
+    3300102: chair01
+    3300104: clock
+    3300106: Cooker
+    3300108: curtain
+    3300110: cutterbox
+    3300112: designbox
+    3300114: designed wall
+    3300116: desk lamp
+    3300118: diningroom carpet
+    3300120: dome light01
+    3300122: dome light02
+    3300124: dome light03
+    3300126: door
+    3300128: doork
+    3300130: doork001
+    3300132: doork002
+    3300134: doork003
+    3300136: doork004
+    3300138: doorside
+    3300140: dread board
+    3300142: dvd
+    3300144: dvdchest
+    3300146: floor1
+    3300148: floor2
+    3300150: football
+    3300152: fountain
+    3300154: fridge
+    3300156: gas cooker
+    3300158: gas01
+    3300160: glassdoor
+    3300162: goldpillow
+    3300164: graypillow
+    3300166: housetop
+    3300168: indicator
+    3300170: keyset
+    3300172: kitchen cabinets
+    3300174: kitchendoor01
+    3300176: kitchendoor02
+    3300178: kitchendoor03
+    3300180: kitchendoorframe
+    3300182: Ladle
+    3300184: line
+    3300186: master
+    3300188: micr
+    3300190: Mouse
+    3300192: orange1
+    3300194: orange2
+    3300196: orange3
+    3300198: parlor sofa01
+    3300200: parlor sofa02
+    3300202: patternpillow01
+    3300204: patternpillow02
+    3300206: patternpillow03
+    3300208: patternpillow04
+    3300210: Phone01
+    3300212: phone02
+    3300214: picture frame01
+    3300216: picture frame02
+    3300218: pictureframe01
+    3300220: pictureframe02
+    3300222: Plane012
+    3300224: plate
+    3300226: pork
+    3300228: red pepper01
+    3300230: red_design_carpet
+    3300232: redcarpet02
+    3300234: roomdoor
+    3300236: schoolbag
+    3300238: shoecase
+    3300240: shower
+    3300242: showercarpet
+    3300244: showerdoor
+    3300246: showerglass
+    3300248: slipper_left
+    3300250: slipper_right
+    3300252: smallbox
+    3300254: smallchest1
+    3300256: smallsofa
+    3300258: smallwall1
+    3300260: smallwall2
+    3300262: smoke cleaner
+    3300264: sofa001
+    3300266: sofa002
+    3300268: sofa003
+    3300270: sofa004
+    3300272: sofaPillow_red
+    3300274: sofaPillow_yellow
+    3300276: Sound
+    3300278: stairway
+    3300280: stockpot
+    3300282: table
+    3300284: tea table1
+    3300286: tea table2
+    3300288: tea table3
+    3300290: toilet
+    3300292: toiletcarpet
+    3300294: toiletdoor
+    3300296: toy01
+    3300298: toy02
+    3300300: toy03
+    3300302: toy03content
+    3300304: tv01
+    3300306: tv02
+    3300308: tv03
+    3300310: tv04
+    3300312: tv05
+    3300314: tvwall
+    3300316: umbrella
+    3300318: wall1
+    3300320: wall2
+    3300322: wallline01
+    3300324: wallline02
+    3300326: wardrobe01
+    3300328: wardrobe02
+    3300330: wardrobe03
+    3300332: wardrobe04
+    3300334: wardrobe05
+    3300336: wash basin
+    3300338: woodwall
+    3300340: woodwindow01
+    3300342: woodwindow02
+    3300344: woodwindow03
+    3300346: woodwindow04
+    3300348: woodwindow05
+    3300350: woodwindow06
+    3300352: woodwindow07
+    3300354: woodwindow08
+    3300356: woodwindow09
+    3300358: woodwindow10
+    3300360: woodwindow11
+    3300362: woodwindow12
+    3300364: writing case
+    3300366: yellow pepper
+    3300368: Box001
+    3300370: midwall
+    3300372: midwall001
+    3300374: handrailff
+    3300376: windowf1
+    3300378: windowf2
+    3300380: windowf3
+    3300382: Plane013
+    3300384: Plane014
+    3300386: Plane015
+    4300000: stairway
+    4300002: wash basin
+    4300004: toiletcarpet
+    4300006: toilet
+    4300008: wall1
+    4300010: shoecase
+    4300012: tvwall
+    4300014: pictureframe01
+    4300016: bigwoodwindow
+    4300018: artwoodwork
+    4300020: wall2
+    4300022: dvdchest
+    4300024: floor1
+    4300026: tv04
+    4300028: bell
+    4300030: curtain
+    4300032: dvd
+    4300034: Sound
+    4300036: umbrella
+    4300038: tv01
+    4300040: pictureframe02
+    4300042: toy01
+    4300044: wallline01
+    4300046: floor2
+    4300048: bigyellowcarpet
+    4300050: housetop
+    4300052: toy02
+    4300054: football
+    4300056: Buddha
+    4300058: artwork02
+    4300060: artwork01
+    4300062: bed04
+    4300064: sofa004
+    4300066: bedside chest01
+    4300068: smallchest1
+    4300070: tv02
+    4300072: schoolbag
+    4300074: writing case
+    4300076: desk lamp
+    4300078: bookcase01
+    4300080: bedroomdesk1
+    4300082: woodwall
+    4300084: kitchendoor03
+    4300086: Cooker
+    4300088: kitchendoorframe
+    4300090: fridge
+    4300092: gas cooker
+    4300094: micr
+    4300096: kitchen cabinets
+    4300098: smoke cleaner
+    4300100: stockpot
+    4300102: pork
+    4300104: red pepper01
+    4300106: yellow pepper
+    4300108: bowl02
+    4300110: bowl04
+    4300112: bowl01
+    4300114: Ladle
+    4300116: bed03
+    4300118: sofa003
+    4300120: clock
+    4300122: phone02
+    4300124: goldpillow
+    4300126: smallbox
+    4300128: wardrobe04
+    4300130: celling_small_light
+    4300132: ceiling02
+    4300134: artchest
+    4300136: wallline02
+    4300138: woodwindow01
+    4300140: woodwindow02
+    4300142: woodwindow03
+    4300144: woodwindow04
+    4300146: woodwindow06
+    4300148: woodwindow07
+    4300150: woodwindow05
+    4300152: woodwindow08
+    4300154: woodwindow11
+    4300156: woodwindow10
+    4300158: woodwindow12
+    4300160: woodwindow09
+    4300162: glassdoor
+    4300164: bluepillow
+    4300166: book07
+    4300168: book08
+    4300170: book09
+    4300172: book10
+    4300174: bowl03
+    4300176: aspirator
+    4300178: air conditioner01
+    4300180: fountain
+    4300182: designbox
+    4300184: gas01
+    4300186: wardrobe02
+    4300188: bwpillow
+    4300190: bed01
+    4300192: smallsofa
+    4300194: bedside chest03
+    4300196: wardrobe05
+    4300198: wardrobe03
+    4300200: air conditioner02
+    4300202: artbox1
+    4300204: artbox2
+    4300206: tv05
+    4300208: toiletdoor
+    4300210: Plane012
+    4300212: ceiling01
+    4300214: dome light03
+    4300216: cellinglight
+    4300218: red_design_carpet
+    4300220: redcarpet02
+    4300222: tv03
+    4300224: smallwall2
+    4300226: patternpillow01
+    4300228: patternpillow04
+    4300230: patternpillow03
+    4300232: brownpillow01
+    4300234: brownpillow02
+    4300236: patternpillow02
+    4300238: tea table1
+    4300240: parlor sofa01
+    4300242: parlor sofa02
+    4300244: diningroom carpet
+    4300246: table
+    4300248: chair01
+    4300250: cabinet01
+    4300252: cabinet02
+    4300254: dome light02
+    4300256: tea table2
+    4300258: Phone01
+    4300260: sofaPillow_red
+    4300262: sofa001
+    4300264: tea table3
+    4300266: sofaPillow_yellow
+    4300268: orange2
+    4300270: orange1
+    4300272: orange3
+    4300274: plate
+    4300276: book01
+    4300278: book11
+    4300280: book05
+    4300282: book04
+    4300284: book06
+    4300286: bookroomcarpet
+    4300288: sofa002
+    4300290: bookcase02
+    4300292: bookroomdesk
+    4300294: book02
+    4300296: book03
+    4300298: graypillow
+    4300300: bed02
+    4300302: wardrobe01
+    4300304: bedside chest02
+    4300306: bedside light
+    4300308: designed wall
+    4300310: picture frame01
+    4300312: picture frame02
+    4300314: smallwall1
+    4300316: showerdoor
+    4300318: showerglass
+    4300320: toy03
+    4300322: toy03content
+    4300324: cutterbox
+    4300326: dread board
+    4300328: kitchendoor02
+    4300330: kitchendoor01
+    4300332: doork001
+    4300334: dome light01
+    4300336: doork
+    4300338: roomdoor
+    4300340: doork002
+    4300342: doork003
+    4300344: doork004
+    4300346: slipper_right
+    4300348: slipper_left
+    4300350: indicator
+    4300352: keyset
+    4300354: Mouse
+    4300356: line
+    4300358: master
+    4300360: shower
+    4300362: showercarpet
+    4300364: doorside
+    4300366: door
+    4300368: Box001
+    4300370: midwall
+    4300372: midwall001
+    4300374: handrailff
+    4300376: windowf1
+    4300378: windowf2
+    4300380: windowf3
+    4300382: Plane013
+    4300384: Plane014
+    4300386: Plane015
+    6400000: air conditioner01
+    6400002: air conditioner02
+    6400004: artbox1
+    6400006: artbox2
+    6400008: artchest
+    6400010: artwoodwork
+    6400012: artwork01
+    6400014: artwork02
+    6400016: aspirator
+    6400018: bed01
+    6400020: bed02
+    6400022: bed03
+    6400024: bed04
+    6400026: bedroomdesk1
+    6400028: bedside chest01
+    6400030: bedside chest02
+    6400032: bedside chest03
+    6400034: bedside light
+    6400036: bell
+    6400038: bigwoodwindow
+    6400040: bigyellowcarpet
+    6400042: bluepillow
+    6400044: book01
+    6400046: book02
+    6400048: book03
+    6400050: book04
+    6400052: book05
+    6400054: book06
+    6400056: book07
+    6400058: book08
+    6400060: book09
+    6400062: book10
+    6400064: book11
+    6400066: bookcase01
+    6400068: bookcase02
+    6400070: bookroomcarpet
+    6400072: bookroomdesk
+    6400074: bowl01
+    6400076: bowl02
+    6400078: bowl03
+    6400080: bowl04
+    6400082: brownpillow01
+    6400084: brownpillow02
+    6400086: Buddha
+    6400088: bwpillow
+    6400090: cabinet01
+    6400092: cabinet02
+    6400094: ceiling01
+    6400096: ceiling02
+    6400098: celling_small_light
+    6400100: cellinglight
+    6400102: chair01
+    6400104: clock
+    6400106: Cooker
+    6400108: curtain
+    6400110: cutterbox
+    6400112: designbox
+    6400114: designed wall
+    6400116: desk lamp
+    6400118: diningroom carpet
+    6400120: dome light01
+    6400122: dome light02
+    6400124: dome light03
+    6400126: door
+    6400128: doork
+    6400130: doork001
+    6400132: doork002
+    6400134: doork003
+    6400136: doork004
+    6400138: doorside
+    6400140: dread board
+    6400142: dvd
+    6400144: dvdchest
+    6400146: floor1
+    6400148: floor2
+    6400150: football
+    6400152: fountain
+    6400154: fridge
+    6400156: gas cooker
+    6400158: gas01
+    6400160: glassdoor
+    6400162: goldpillow
+    6400164: graypillow
+    6400166: housetop
+    6400168: indicator
+    6400170: keyset
+    6400172: kitchen cabinets
+    6400174: kitchendoor01
+    6400176: kitchendoor02
+    6400178: kitchendoor03
+    6400180: kitchendoorframe
+    6400182: Ladle
+    6400184: line
+    6400186: master
+    6400188: micr
+    6400190: Mouse
+    6400192: orange1
+    6400194: orange2
+    6400196: orange3
+    6400198: parlor sofa01
+    6400200: parlor sofa02
+    6400202: patternpillow01
+    6400204: patternpillow02
+    6400206: patternpillow03
+    6400208: patternpillow04
+    6400210: Phone01
+    6400212: phone02
+    6400214: picture frame01
+    6400216: picture frame02
+    6400218: pictureframe01
+    6400220: pictureframe02
+    6400222: Plane012
+    6400224: plate
+    6400226: pork
+    6400228: red pepper01
+    6400230: red_design_carpet
+    6400232: redcarpet02
+    6400234: roomdoor
+    6400236: schoolbag
+    6400238: shoecase
+    6400240: shower
+    6400242: showercarpet
+    6400244: showerdoor
+    6400246: showerglass
+    6400248: slipper_left
+    6400250: slipper_right
+    6400252: smallbox
+    6400254: smallchest1
+    6400256: smallsofa
+    6400258: smallwall1
+    6400260: smallwall2
+    6400262: smoke cleaner
+    6400264: sofa001
+    6400266: sofa002
+    6400268: sofa003
+    6400270: sofa004
+    6400272: sofaPillow_red
+    6400274: sofaPillow_yellow
+    6400276: Sound
+    6400278: stairway
+    6400280: stockpot
+    6400282: table
+    6400284: tea table1
+    6400286: tea table2
+    6400288: tea table3
+    6400290: toilet
+    6400292: toiletcarpet
+    6400294: toiletdoor
+    6400296: toy01
+    6400298: toy02
+    6400300: toy03
+    6400302: toy03content
+    6400304: tv01
+    6400306: tv02
+    6400308: tv03
+    6400310: tv04
+    6400312: tv05
+    6400314: tvwall
+    6400316: umbrella
+    6400318: wall1
+    6400320: wall2
+    6400322: wallline01
+    6400324: wallline02
+    6400326: wardrobe01
+    6400328: wardrobe02
+    6400330: wardrobe03
+    6400332: wardrobe04
+    6400334: wardrobe05
+    6400336: wash basin
+    6400338: woodwall
+    6400340: woodwindow01
+    6400342: woodwindow02
+    6400344: woodwindow03
+    6400346: woodwindow04
+    6400348: woodwindow05
+    6400350: woodwindow06
+    6400352: woodwindow07
+    6400354: woodwindow08
+    6400356: woodwindow09
+    6400358: woodwindow10
+    6400360: woodwindow11
+    6400362: woodwindow12
+    6400364: writing case
+    6400366: yellow pepper
+    6400368: Box001
+    6400370: midwall
+    6400372: midwall001
+    6400374: handrailff
+    6400376: windowf1
+    6400378: windowf2
+    6400380: windowf3
+    6400382: Plane013
+    6400384: Plane014
+    6400386: Plane015
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.5
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

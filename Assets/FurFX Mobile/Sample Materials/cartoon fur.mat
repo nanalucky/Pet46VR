@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: cartoon fur
+  m_Shader: {fileID: 4800000, guid: e8c2138bcca0d7948b95dfe4c8079fea, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 883565c675665574a962d9022e235650, type: 3}
+          m_Scale: {x: 3, y: 3}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cube
+        second:
+          m_Texture: {fileID: 8900000, guid: 81b555ad570142040a13a3dc45012cbf, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NoiseTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 405d544f6f079884f986f6f9812f5a03, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Reflection
+        second: .461538464
+      data:
+        first:
+          name: _Cutoff
+        second: 0
+      data:
+        first:
+          name: _Shininess
+        second: 10.000001
+      data:
+        first:
+          name: _FurLength
+        second: .0916021764
+      data:
+        first:
+          name: _HairHardness
+        second: 1
+      data:
+        first:
+          name: _HairThinness
+        second: 3.27596164
+      data:
+        first:
+          name: _HairShading
+        second: .423076928
+      data:
+        first:
+          name: _HairColoring
+        second: 0
+      data:
+        first:
+          name: _SkinAlpha
+        second: .544776142
+      data:
+        first:
+          name: _EdgeFade
+        second: .405855358
+      data:
+        first:
+          name: _RimPower
+        second: 8
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .738806009, g: .0441078283, b: .0441078283, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _ForceGlobal
+        second: {r: 0, g: -0, b: 0, a: 0}
+      data:
+        first:
+          name: _ForceLocal
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 0, g: 0, b: 0, a: 0}
