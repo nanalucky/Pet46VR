@@ -22,7 +22,6 @@ public class Grasp : MonoBehaviour {
 	public Vector3 maxOffset = new Vector3 (0.0f, 0.15f, 0.15f);
 	public float smooth = 0.1f;
 
-	private Camera mainCamera;
 	private GameObject goDog;
 	private GameObject go;
 	private Collider co;
@@ -38,7 +37,6 @@ public class Grasp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainCamera = Camera.main;
 		goDog = GameObject.FindGameObjectWithTag ("dog");
 		go = GameObject.Find (partName);
 		go.AddComponent<MeshCollider> ();
@@ -58,7 +56,7 @@ public class Grasp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Ray ray = mainCamera.ScreenPointToRay (Input.mousePosition);
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 		bool ret;// = co.Raycast (ray, out hit, 100.0f) && Input.GetMouseButton(0);
 		switch (state) {
@@ -110,7 +108,7 @@ public class Grasp : MonoBehaviour {
 			}
 			else
 			{
-				Ray rayCur = mainCamera.ScreenPointToRay(Input.mousePosition);
+				Ray rayCur = Camera.main.ScreenPointToRay(Input.mousePosition);
 				Vector3 posCur = PetHelper.ProjectPointLine(limbIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));
 				Vector3 firstInLocal = Quaternion.Inverse(goDog.transform.rotation) * firstPosition;
 				Vector3 curInLocal = Quaternion.Inverse(goDog.transform.rotation) * posCur;

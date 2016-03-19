@@ -7,7 +7,7 @@ public class BallDogCamera : MonoBehaviour {
 	public float maxDistance = 3.0f;
 	public float speedEulerX = 1.0f;
 
-	private Camera mainCamera;
+	private GameObject mainCamera;
 	private GameObject go;
 
 	private float cameraHeight;
@@ -16,7 +16,7 @@ public class BallDogCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainCamera = Camera.main;
+		mainCamera = GameObject.Find("OVRCameraRig");
 		go = GameObject.FindGameObjectWithTag ("dog");
 	}
 	

@@ -18,7 +18,6 @@ public class Touch : MonoBehaviour {
 	public float timeOutEnjoy = 1.0f;
 	public State state;
 
-	private Camera mainCamera;
 	private GameObject goDog;
 	private GameObject go;
 	private Collider co;
@@ -36,7 +35,6 @@ public class Touch : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainCamera = Camera.main;
 		goDog = GameObject.FindGameObjectWithTag ("dog");
 		go = GameObject.Find (partName);
 		go.AddComponent<MeshCollider> ();
@@ -67,7 +65,7 @@ public class Touch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Ray ray = mainCamera.ScreenPointToRay (Input.mousePosition);
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 		bool ret;// = co.Raycast (ray, out hit, 100.0f) && Input.GetMouseButton(0);
 		switch (state) 

@@ -27,7 +27,6 @@ public class GraspTail : MonoBehaviour {
 	public string animName;
 	public GraspMethod method = GraspMethod.ProjectPointLine;
 
-	private Camera mainCamera;
 	private GameObject go;
 	private Collider co;
 	private SkinnedCollisionHelper skinHelper;
@@ -41,7 +40,6 @@ public class GraspTail : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainCamera = Camera.main;
 		go = GameObject.Find (partName);
 		go.AddComponent<MeshCollider> ();
 		skinHelper = go.AddComponent<SkinnedCollisionHelper> ();
@@ -60,7 +58,7 @@ public class GraspTail : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Ray ray = mainCamera.ScreenPointToRay (Input.mousePosition);
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 		bool ret;// = co.Raycast (ray, out hit, 100.0f) && Input.GetMouseButton(0);
 		switch (state) {
@@ -118,7 +116,7 @@ public class GraspTail : MonoBehaviour {
 				switch(method)
 				{
 				case GraspMethod.ProjectPointLine:
-					Ray rayCur = mainCamera.ScreenPointToRay(Input.mousePosition);
+					Ray rayCur = Camera.main.ScreenPointToRay(Input.mousePosition);
 					posCur = PetHelper.ProjectPointLine(ccdIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));
 					ccdIK.solver.IKPosition = posCur;
 					break;

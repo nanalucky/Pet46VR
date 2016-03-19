@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
+	private GameObject mainCamera;
+
+	void Start()
+	{
+		mainCamera = GameObject.Find ("OVRCameraRig");
+	}
+
 	public void OnClickRobot()
 	{
 		GameObject.FindGameObjectWithTag ("dog").GetComponent<DogController> ().ToRobot ();
@@ -85,7 +92,7 @@ public class UIController : MonoBehaviour {
 		DogController dogController = GameObject.FindGameObjectWithTag ("dog").GetComponent<DogController> ();
 		dogController.volumeMute = !dogController.volumeMute;
 
-		Camera.main.GetComponent<AudioSource> ().mute = dogController.volumeMute; 
+		mainCamera.GetComponent<AudioSource> ().mute = dogController.volumeMute; 
 		//GameObject.FindGameObjectWithTag ("dog").GetComponent<AudioSource> ().enabled = !GameObject.FindGameObjectWithTag ("dog").GetComponent<AudioSource> ().enabled;
 		Button btn = dogController.btnVolume.GetComponent<Button> ();
 		if(!dogController.volumeMute)
@@ -127,7 +134,7 @@ public class UIController : MonoBehaviour {
 		} else {
 			go = Instantiate(Resources.Load("Prefabs/Ball")) as GameObject;
 			go.GetComponent<Rigidbody>().isKinematic = true;
-			go.transform.position = Camera.main.transform.position + Camera.main.transform.rotation * (new Vector3(0, 0, 0.4f + 0.08f));
+			go.transform.position = mainCamera.transform.position + mainCamera.transform.rotation * (new Vector3(0, 0, 0.4f + 0.08f));
 			GameObject goPlay = Instantiate(Resources.Load("Prefabs/BallPlay")) as GameObject;
 		}
 	}

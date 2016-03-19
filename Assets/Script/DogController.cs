@@ -35,6 +35,7 @@ public class DogController : MonoBehaviour {
 	private float lookatEyeWeight;
 
 	private Animator animator;
+	private GameObject mainCamera;
 
 	[HideInInspector] public bool volumeEnabled = true;
 	[HideInInspector] public bool volumeMute = false;
@@ -43,6 +44,7 @@ public class DogController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = gameObject.GetComponent<Animator> ();
+		mainCamera = GameObject.Find ("OVRCameraRig");
 		lookatBodyWeight = gameObject.GetComponent<LookAtIK> ().solver.bodyWeight;
 		lookatHeadWeight = gameObject.GetComponent<LookAtIK> ().solver.headWeight;
 		lookatEyeWeight = gameObject.GetComponent<LookAtIK> ().solver.eyesWeight;
@@ -348,12 +350,12 @@ public class DogController : MonoBehaviour {
 
 		if(enable)
 		{
-			Camera.main.GetComponent<AudioSource>().mute = volumeMute;
+			mainCamera.GetComponent<AudioSource>().mute = volumeMute;
 			gameObject.GetComponent<AudioSource> ().mute = false;
 		}
 		else
 		{
-			Camera.main.GetComponent<AudioSource>().mute = true;
+			mainCamera.GetComponent<AudioSource>().mute = true;
 			gameObject.GetComponent<AudioSource> ().mute = false;
 		}
 	}

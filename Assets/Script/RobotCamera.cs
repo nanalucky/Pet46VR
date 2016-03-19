@@ -11,7 +11,7 @@ public class RobotCamera : MonoBehaviour {
 	public float timeDelta = 60.0f;
 
 	private GameObject go;
-	private Camera mainCamera;
+	private GameObject mainCamera;
 	private Vector3 curLookat;
 	private float curDistance;
 	private int curDistanceIndex;
@@ -22,7 +22,7 @@ public class RobotCamera : MonoBehaviour {
 	void Start()
 	{
 		go = GameObject.FindGameObjectWithTag ("dog");
-		mainCamera = Camera.main;
+		mainCamera = GameObject.Find("OVRCameraRig");
 
 		Plane plane = new Plane( new Vector3(0, 1, 0), go.GetComponent<DogController>().GetDogPivot());
 		Vector3 direction = mainCamera.transform.rotation * (new Vector3(0,0,1));

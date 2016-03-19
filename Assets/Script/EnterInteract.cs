@@ -17,7 +17,7 @@ public class EnterInteract : MonoBehaviour {
 
 	public class AIMoveCamera : AI
 	{
-		private Camera mainCamera;
+		private GameObject mainCamera;
 		private GameObject go;
 
 		private bool cameraMove;
@@ -37,7 +37,7 @@ public class EnterInteract : MonoBehaviour {
 		{
 			controller = ctrl;
 			go = GameObject.FindGameObjectWithTag("dog");
-			mainCamera = Camera.main;
+			mainCamera = GameObject.Find("OVRCameraRig");
 
 			// camera
 			cameraMove = true;
@@ -238,7 +238,7 @@ public class EnterInteract : MonoBehaviour {
 
 	public class AIRun : AI
 	{
-		private Camera mainCamera;
+		private GameObject mainCamera;
 		private GameObject go;
 
 		private bool inMove;
@@ -248,7 +248,7 @@ public class EnterInteract : MonoBehaviour {
 		public override void Start(EnterInteract ctrl)
 		{
 			controller = ctrl;
-			mainCamera = Camera.main;
+			mainCamera = GameObject.Find("OVRCameraRig");
 			go = GameObject.FindGameObjectWithTag ("dog");
 
 			startPosition = go.transform.position;
