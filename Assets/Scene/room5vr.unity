@@ -67,18 +67,15 @@ LightmapSettings:
   - m_Lightmap: {fileID: 2800000, guid: ec90912d696969045901f51a7afc0279, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 0320f7830f83f97418876a2d9b27f0ea,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: f64b22943afcf354bbe09c470b3b866c, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 1963ad31328ce504f88e4b64430c0dc7,
-      type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: c1ef144466d69364ba5874f2465b49f4, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 8c20f5ab2cf56bf4fa2d8efa0c714088,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: 36926679f8b986640ba2a777e5a55e1d, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 83d05f159fe879a4b8f565f8d29b2c27,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 6406f3651ae4e1c4182e66192b0867cf, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 3b7d7f361042d96459e8f0b82e41159b,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: 52edd759c96d27f40a9d83d0d2612a99, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: e076df3ec633a4040b1d93fbad21c6b9,
       type: 3}
@@ -106,9 +103,8 @@ LightmapSettings:
   - m_Lightmap: {fileID: 2800000, guid: f7e946076c1abd3459cb7f03acd36b24, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: b1c859d6575c70c4dad3bfa6f5211e85,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 9683e4c27c9e68049a493e463e0761f7, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 2d68f083a3278b84cbc354703594f5a3,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: 25615ba3205a9034f86800e666188943, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: fff49f42197a9e746be9cd915a195678,
       type: 3}
@@ -133,9 +129,8 @@ LightmapSettings:
   - m_Lightmap: {fileID: 2800000, guid: 1ff172d141acd114e9a33715b6c61200, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 86b94844bccccbf4bac2f817b34b8cc1,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 3031f6e3be3dc1e499142e1d3d8f7c41, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: a0c2ecc8f1a631c4aab7a6181fadd7d9,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: 9b9e1f6bd99e9164aa994bb8039e6246, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 1ef79e4d4cb7b374f8f9cf3bdf3f328d,
       type: 3}
@@ -181,18 +176,15 @@ LightmapSettings:
   - m_Lightmap: {fileID: 2800000, guid: 8985bdd50f8a30c4c9d1c85f7357ae37, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 8c4ef924519ce0c45b3e097037a997bb,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 74e629ad47a224344b5e8e134ce19141, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 32498bcf4fb898248afaccd8048f4476,
-      type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 5f61ca7d78ef9a24f9523d892111fd63, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 89a3f6941e1019244998033115cad72f,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: 864255f742764cc49af65c8abf62ab47, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: d816b1b36f3d575459eac08585bdd770,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: cb5640da0ce9d7a42b00ddb258cbfe68, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: a0386322d229b4c4e9f6be7545e911af,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: 1d28146a47ce3e84a85d0f9fe8f3972e, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 0b2b1a579c02f0c468ddf0d9fd1af6da,
       type: 3}
@@ -202,21 +194,17 @@ LightmapSettings:
   - m_Lightmap: {fileID: 2800000, guid: bd2cfca0e00c14d4f95f018e2ec610e0, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: cace178289b54994d846abd9aeb1f651,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 4ce01053dc4a9194bb43e9e9e887cd16, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 854a244fcb77f294188ce1462153f00a,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: 484ae842b00a8c8409079f92645a82ca, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 4c216fd7cfb42194ca00252ed9f9a875,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 2685e7d0c808eaf4d829655f685eebfb, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: db4a6d781800c6b40b17cf64ffdadbd5,
-      type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 9d1b8925ae561a44c9e5aa6fa00e7f03, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: f974ff8f3560d3d49b12fdeaebd95a38,
-      type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: aca10ea52a3279c41951317ffef62047, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 01fb4b739a3c77d429a0bcdd107c9679,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   - m_Lightmap: {fileID: 2800000, guid: b962457524434ac43a8a0d94b24100b8, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: faf65de3f08fb164da9cf393f49ddaf3,
       type: 3}
@@ -232,9 +220,8 @@ LightmapSettings:
   - m_Lightmap: {fileID: 2800000, guid: 2a78f2fcb309a0149b5bf38a4b67df1a, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: efa64a0dce345b042ba7cd73e584d750,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 88434caed7089354ba3de0e1f8f10cdf, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 5cfbad12d42a90344b896c2128fd1922,
-      type: 3}
+  - m_Lightmap: {fileID: 0}
+    m_IndirectLightmap: {fileID: 0}
   m_LightmapsMode: 1
   m_BakedColorSpace: 0
   m_UseDualLightmapsInForward: 0
