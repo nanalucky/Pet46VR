@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11408868}
   - 114: {fileID: 11408866}
   - 114: {fileID: 11408864}
+  - 114: {fileID: 11410684}
   m_Layer: 8
   m_Name: RobotScript
   m_TagString: RobotScript
@@ -54,8 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061667a5d2966254f973cd6663b6d505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: .800000012
-  maxDistance: 3
+  minDistance: .899999976
+  maxDistance: .899999976
   speedEulerX: 1
 --- !u!114 &11408868
 MonoBehaviour:
@@ -63,15 +64,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108864}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5bf5b554837c8a4d8f5578876ea8893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eulerX: 13.8000002
+  eulerX: 15
   eulerXSpeed: 50
   distances:
-  - 1
+  - .899999976
   - 2
   distanceSpeed: 2
   lookatSpeed: 2
@@ -88,6 +89,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   State: 0
+--- !u!114 &11410684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a00696245715904e838176623d72d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eulerX: 15
+  minDistance: 1.20000005
+  maxDistance: 12
+  speedEulerX: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
