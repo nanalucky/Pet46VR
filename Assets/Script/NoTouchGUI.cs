@@ -50,7 +50,7 @@ public class NoTouchGUI : MonoBehaviour
 	/// <summary>
 	/// Shows and hides the menu
 	/// </summary>
-	float Show(bool show)
+	public float Show(bool show)
 	{
 		if ((show && isVisible) || (!show && !isVisible))
 		{
@@ -58,13 +58,8 @@ public class NoTouchGUI : MonoBehaviour
 		}
 		if (show)
 		{
-			// orient and position in front of the player's view
-			Vector3 offset = (cameraController.centerEyeAnchor.forward * distanceFromViewer);
-			offset.y = (transform.position.y - cameraController.centerEyeAnchor.position.y);
-			transform.position = cameraController.centerEyeAnchor.position + offset;
-			Vector3 dirToCamera = cameraController.centerEyeAnchor.forward;
-			dirToCamera.y = 0.0f;
-			transform.forward = dirToCamera.normalized;
+			transform.position = cameraController.transform.position;
+			transform.rotation = cameraController.transform.rotation;
 
 			// refresh any children
 			BroadcastMessage("OnRefresh", SendMessageOptions.DontRequireReceiver);

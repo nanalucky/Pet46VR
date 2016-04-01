@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413974}
   - 114: {fileID: 11413974}
+  - 114: {fileID: 11425476}
   m_Layer: 0
   m_Name: EnterBall
   m_TagString: EnterBall
@@ -34,7 +35,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113974}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: beab35a5fb1dc904993ad9b5c948b049, type: 3}
   m_Name: 
@@ -48,6 +49,20 @@ MonoBehaviour:
   eulerXSmooth: .5
   turnEulerYSpeed: 480
   stayTime: 1
+--- !u!114 &11425476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5f1ef9fe5256541b360ef5e5408578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnEulerYSpeed: 480
+  stayTime: 1
+  stay2Time: .5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

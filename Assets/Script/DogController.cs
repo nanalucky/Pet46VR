@@ -273,6 +273,7 @@ public class DogController : MonoBehaviour {
 		Instantiate(Resources.Load("Prefabs/RobotScript"));
 		EnableMusicAndEffect (true);
 		btnRobot.interactable = false;
+		GameObject.Find ("NoTouchGUI").GetComponent<NoTouchGUI> ().Show (false);
 	}
 
 	public void ToInteract()
@@ -283,6 +284,7 @@ public class DogController : MonoBehaviour {
 
 		btnInteract.interactable = false;
 		btnInteractOral.interactable = false;
+		GameObject.Find ("NoTouchGUI").GetComponent<NoTouchGUI> ().Show (false);
 	}
 
 	public void ToInteract2()
@@ -312,6 +314,7 @@ public class DogController : MonoBehaviour {
 		Instantiate(Resources.Load("Prefabs/EnterBall"));
 		EnableMusicAndEffect (true);
 		//btnBall.interactable = false;
+		GameObject.Find ("NoTouchGUI").GetComponent<NoTouchGUI> ().Show (false);
 	}
 
 	public void ToExercise()

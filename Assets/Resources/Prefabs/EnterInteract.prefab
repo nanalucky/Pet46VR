@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 477772}
   - 114: {fileID: 11477772}
+  - 114: {fileID: 11458550}
   m_Layer: 0
   m_Name: EnterInteract
   m_TagString: EnterInteract
@@ -28,13 +29,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11477772
+--- !u!114 &11458550
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177772}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f937aaeb232ed3f48ab8bebb9c36d45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnEulerYSpeed: 480
+  stayTime: 1
+--- !u!114 &11477772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177772}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64762d22ecdbf994f918f4cf7553fe76, type: 3}
   m_Name: 

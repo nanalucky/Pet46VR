@@ -38,7 +38,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108864}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 259ff2160fddb5944921a9bf5cc0b474, type: 3}
   m_Name: 
@@ -100,10 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a00696245715904e838176623d72d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eulerX: 15
-  minDistance: 1.20000005
-  maxDistance: 12
-  speedEulerX: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
