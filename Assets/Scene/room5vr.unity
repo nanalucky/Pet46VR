@@ -50,8 +50,8 @@ LightmapSettings:
   - m_Lightmap: {fileID: 2800000, guid: 858b2c3f9e931b043a69d6a615c23b07, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: e67df0b3edf4a1d4bb9bc403e5a2cb09,
       type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: 276ee41fc30598d4cb4082193cb34c14, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 47090d1341941a042beb4f9924af03c5,
+  - m_Lightmap: {fileID: 2800000, guid: fa782d9195311a648a9a56c4351faddc, type: 3}
+    m_IndirectLightmap: {fileID: 2800000, guid: fa2c289008aa17a40811edbc960913b7,
       type: 3}
   - m_Lightmap: {fileID: 2800000, guid: cb58c0ee74ad4cf4988490eb00c443b9, type: 3}
     m_IndirectLightmap: {fileID: 2800000, guid: 6237e63a7dcf88542b5b29ad188cf981,
@@ -446,7 +446,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 65215946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.25400019, y: 0, z: 6.50400019}
+  m_LocalPosition: {x: 6.25400019, y: 0, z: 6.37799978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5769,7 +5769,7 @@ Transform:
   m_PrefabInternal: {fileID: 1450709027}
   m_GameObject: {fileID: 615306434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.25400019, y: 0, z: 6.63500023}
+  m_LocalPosition: {x: 6.25400019, y: 0, z: 6.50899982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1773907660}
@@ -7063,7 +7063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &711145467
 Transform:
   m_ObjectHideFlags: 0
@@ -12200,7 +12200,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1189313994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.25400019, y: 0, z: 6.63500023}
+  m_LocalPosition: {x: 6.25400019, y: 0, z: 6.50899982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14613,7 +14613,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400102, guid: 3e6b1253a47841a46a16accac9850bdd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.63500023
+      value: 6.50899982
       objectReference: {fileID: 0}
     - target: {fileID: 400102, guid: 3e6b1253a47841a46a16accac9850bdd, type: 3}
       propertyPath: m_LocalRotation.x
