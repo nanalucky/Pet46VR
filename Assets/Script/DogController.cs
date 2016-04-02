@@ -10,6 +10,7 @@ public class DogController : MonoBehaviour {
 	public float walkSpeed = 0.85f;
 	public float runSpeed = 1.8f;
 	public float rushSpeed = 1.5f;
+	public float ballDistance = 0.48f;
 
 	public GameObject word;
 	public Button btnRecord;
@@ -229,7 +230,7 @@ public class DogController : MonoBehaviour {
 
 	void ClearAll()
 	{
-		Time.fixedDeltaTime = 0.02f;
+		Time.fixedDeltaTime = 0.0166666f;
 		GetComponent<StartIdle> ().enabled = false;
 		btnInteractOral.interactable = true;
 

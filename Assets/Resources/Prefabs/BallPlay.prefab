@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409536}
-  - 114: {fileID: 11409544}
   - 114: {fileID: 11409540}
   - 114: {fileID: 11409538}
+  - 114: {fileID: 11453446}
   m_Layer: 0
   m_Name: BallPlay
   m_TagString: BallPlay
@@ -57,7 +57,7 @@ MonoBehaviour:
   rushSuccessRate: .800000012
   eulerSmooth: .200000003
   force: 10
---- !u!114 &11409544
+--- !u!114 &11453446
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -65,12 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 109536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c575ea09a84ef4a9bb878113faabaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 893f4e582ad082c4cb01de7fbcf119da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
-  forceMultiplier: 100
-  forceThreshold: 0
+  forceMagnitude: 1000
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
