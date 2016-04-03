@@ -37,6 +37,9 @@ public class TouchVR : MonoBehaviour {
 	private static int headTimes = 0;
 	private static int backTimes = 0;
 
+	private TouchVR[] touches;
+	private bool firstFrame = true;
+
 	// Use this for initialization
 	void Start () {
 		goDog = GameObject.FindGameObjectWithTag ("dog");
@@ -76,9 +79,31 @@ public class TouchVR : MonoBehaviour {
 		sr.color = color;
 	}
 
+	void DisableAllTouchesButThis()
+	{
+		foreach( TouchVR obj in touches )
+		{
+			if(obj != this)
+				obj.enabled = false;
+		}
+	}
+
+	void EnableAllTouches()
+	{
+		foreach( TouchVR obj in touches )
+		{
+			obj.enabled = true;
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (firstFrame) 
+		{
+			firstFrame = false;
+			touches = FindObjectsOfType(typeof(TouchVR)) as TouchVR[];
+		}
+
 		Vector3 fwd = goCrosshairTouch.transform.TransformDirection(Vector3.forward);
 		Ray ray = new Ray (goCrosshairTouch.transform.position, fwd);
 		RaycastHit hit;
@@ -101,6 +126,7 @@ public class TouchVR : MonoBehaviour {
 				lastRotation = goCrosshairTouch.transform.rotation;
 				lastRotationTime = Time.time;
 				lastInTouch = false;
+				DisableAllTouchesButThis();
 			}
 
 			if(ret)
@@ -170,6 +196,7 @@ public class TouchVR : MonoBehaviour {
 			else
 			{
 				state = State.None;
+				EnableAllTouches();
 			}
 
 			if(ret)
@@ -208,6 +235,7 @@ public class TouchVR : MonoBehaviour {
 				if(Time.time - timeNotInTouch > timeOutEnjoy)
 				{
 					state = State.None;
+					EnableAllTouches();
 					switch(aniset)
 					{
 					case 0:

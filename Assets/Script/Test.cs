@@ -13,6 +13,12 @@ public class Test : MonoBehaviour {
 		{
 			Debug.LogWarning ("********not find crosshair*************");
 		}
+
+		BoxCollider[] boxes = FindObjectsOfType(typeof(BoxCollider)) as BoxCollider[];
+		foreach(BoxCollider obj in boxes)
+		{
+			Debug.LogWarning(obj.gameObject.name);
+		}
 	}
 	
 	// Update is called once per frame
