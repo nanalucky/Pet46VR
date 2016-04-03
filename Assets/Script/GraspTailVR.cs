@@ -25,6 +25,7 @@ public class GraspTailVR : CrosshairHand {
 	public int animatorLayer = 0;
 	public string animName;
 	public GraspMethod method = GraspMethod.ProjectPointLine;
+	public float graspFarthestDistance = 0.15f;
 
 	public Color colorTouch = Color.white;
 	public Color colorNotTouch = Color.red;
@@ -136,7 +137,7 @@ public class GraspTailVR : CrosshairHand {
 	
 			Ray rayCur = ray;
 			Vector3 posCur = PetHelper.ProjectPointLine(ccdIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));
-			if((posCur - firstPosition).magnitude > 0.1f)
+			if((posCur - firstPosition).magnitude > graspFarthestDistance)
 			{
 				state = State.None;
 				interact.EnableAllCrosshairHand();

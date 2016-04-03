@@ -22,6 +22,7 @@ public class GraspVR : CrosshairHand {
 	public Vector3 minOffset = new Vector3 (0.0f, 0.0f, 0.0f);
 	public Vector3 maxOffset = new Vector3 (0.0f, 0.15f, 0.15f);
 	public float smooth = 0.1f;
+	public float graspFarthestDistanceMultiply = 1.5f;
 
 	public Color colorTouch = Color.white;
 	public Color colorNotTouch = Color.red;
@@ -136,7 +137,7 @@ public class GraspVR : CrosshairHand {
 			Vector3 posCur = PetHelper.ProjectPointLine(limbIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));
 			Vector3 firstInLocal = Quaternion.Inverse(goDog.transform.rotation) * firstPosition;
 			Vector3 curInLocal = Quaternion.Inverse(goDog.transform.rotation) * posCur;
-			if((curInLocal - firstInLocal).magnitude > (maxOffset - minOffset).magnitude * 1.5)
+			if((curInLocal - firstInLocal).magnitude > (maxOffset - minOffset).magnitude * graspFarthestDistanceMultiply)
 			{
 				state = State.GraspFade;
 				velPosition = 0.0f;
