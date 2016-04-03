@@ -62,7 +62,6 @@ public class GraspVR : CrosshairHand {
 		limbIK.solver.IKRotationWeight = 0.0f;
 
 		SetCrosshairColor (colorNotTouch);
-		OVRTouchpad.TouchHandler += LocalTouchEventCallback;
 	}
 	
 	void SetCrosshairColor(Color color)
@@ -73,8 +72,6 @@ public class GraspVR : CrosshairHand {
 
 	// Update is called once per frame
 	void Update () {
-		OVRTouchpad.Update();
-
 		Vector3 fwd = goCrosshairTouch.transform.TransformDirection(Vector3.forward);
 		Ray ray = new Ray (goCrosshairTouch.transform.position, fwd);
 		RaycastHit hit;
@@ -139,11 +136,20 @@ public class GraspVR : CrosshairHand {
 			Vector3 posCur = PetHelper.ProjectPointLine(limbIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));
 			Vector3 firstInLocal = Quaternion.Inverse(goDog.transform.rotation) * firstPosition;
 			Vector3 curInLocal = Quaternion.Inverse(goDog.transform.rotation) * posCur;
-			curInLocal.x = Mathf.Clamp(curInLocal.x, firstInLocal.x + minOffset.x, firstInLocal.x + maxOffset.x);
-			curInLocal.y = Mathf.Clamp(curInLocal.y, firstInLocal.y + minOffset.y, firstInLocal.y + maxOffset.y);
-			curInLocal.z = Mathf.Clamp(curInLocal.z, firstInLocal.z + minOffset.z, firstInLocal.z + maxOffset.z);
-			Vector3 curInWorld = goDog.transform.rotation * curInLocal;
-			limbIK.solver.IKPosition = curInWorld;
+			if((curInLocal - firstInLocal).magnitude > (maxOffset - minOffset).magnitude * 1.5)
+			{
+				state = State.GraspFade;
+				velPosition = 0.0f;
+				velRotation = 0.0f;
+			}
+			else
+			{
+				curInLocal.x = Mathf.Clamp(curInLocal.x, firstInLocal.x + minOffset.x, firstInLocal.x + maxOffset.x);
+				curInLocal.y = Mathf.Clamp(curInLocal.y, firstInLocal.y + minOffset.y, firstInLocal.y + maxOffset.y);
+				curInLocal.z = Mathf.Clamp(curInLocal.z, firstInLocal.z + minOffset.z, firstInLocal.z + maxOffset.z);
+				Vector3 curInWorld = goDog.transform.rotation * curInLocal;
+				limbIK.solver.IKPosition = curInWorld;
+			}
 
 			if(ret)
 				SetCrosshairColor(colorTouch);
@@ -172,43 +178,6 @@ public class GraspVR : CrosshairHand {
 			Destroy (go.GetComponent<MeshCollider> ());
 			Destroy (go.GetComponent<SkinnedCollisionHelper> ());
 			Destroy (go.GetComponent<LimbIK> ());
-		}
-
-		OVRTouchpad.TouchHandler -= LocalTouchEventCallback;
-	}
-
-	void LocalTouchEventCallback(object sender, EventArgs args)
-	{
-		var touchArgs = (OVRTouchpad.TouchArgs)args;
-		OVRTouchpad.TouchEvent touchEvent = touchArgs.TouchType;
-		
-		switch(touchEvent)
-		{
-		case OVRTouchpad.TouchEvent.SingleTap:
-			//Debug.Log("SINGLE CLICK\n");
-			if(state == State.Grasp)
-			{
-				state = State.GraspFade;
-				velPosition = 0.0f;
-				velRotation = 0.0f;
-			}
-			break;
-			
-		case OVRTouchpad.TouchEvent.Left:
-			//Debug.Log("LEFT SWIPE\n");
-			break;
-			
-		case OVRTouchpad.TouchEvent.Right:
-			//Debug.Log("RIGHT SWIPE\n");
-			break;
-			
-		case OVRTouchpad.TouchEvent.Up:
-			//Debug.Log("UP SWIPE\n");
-			break;
-			
-		case OVRTouchpad.TouchEvent.Down:
-			//Debug.Log("DOWN SWIPE\n");
-			break;
 		}
 	}
 }
