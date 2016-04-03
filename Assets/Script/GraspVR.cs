@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using RootMotion.FinalIK;
+using System;
 
 public class GraspVR : CrosshairHand {
 
@@ -22,10 +23,14 @@ public class GraspVR : CrosshairHand {
 	public Vector3 maxOffset = new Vector3 (0.0f, 0.15f, 0.15f);
 	public float smooth = 0.1f;
 
+	public Color colorTouch = Color.white;
+	public Color colorNotTouch = Color.red;
+
 	private GameObject goDog;
 	private GameObject go;
 	private Collider co;
 	private SkinnedCollisionHelper skinHelper;
+	private GameObject goCrosshairTouch;
 
 	private LimbIK limbIK;
 	private float lastTouchTime;
@@ -33,7 +38,8 @@ public class GraspVR : CrosshairHand {
 	private float velPosition;
 	private float velRotation;
 
-	private bool lastMouseDown = false;
+	private bool lastInTouch = false;
+	private Interact interact;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +49,8 @@ public class GraspVR : CrosshairHand {
 		skinHelper = go.AddComponent<SkinnedCollisionHelper> ();
 		skinHelper.updateOncePerFrame = false;
 		co = go.GetComponent<MeshCollider> ();
+		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
+		interact = FindObjectOfType (typeof(Interact)) as Interact;
 
 		state = State.None;
 		limbIK = go.AddComponent<LimbIK> ();
@@ -52,72 +60,95 @@ public class GraspVR : CrosshairHand {
 		                        GameObject.Find (rootName).transform);
 		limbIK.solver.IKPositionWeight = 0.0f;
 		limbIK.solver.IKRotationWeight = 0.0f;
+
+		SetCrosshairColor (colorNotTouch);
+		OVRTouchpad.TouchHandler += LocalTouchEventCallback;
 	}
 	
+	void SetCrosshairColor(Color color)
+	{
+		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
+		sr.color = color;
+	}
+
 	// Update is called once per frame
 	void Update () {
-		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		OVRTouchpad.Update();
+
+		Vector3 fwd = goCrosshairTouch.transform.TransformDirection(Vector3.forward);
+		Ray ray = new Ray (goCrosshairTouch.transform.position, fwd);
 		RaycastHit hit;
 		bool ret;// = co.Raycast (ray, out hit, 100.0f) && Input.GetMouseButton(0);
 		switch (state) {
 		case State.None:
 			ret = false;
-			if(!lastMouseDown && Input.GetMouseButton(0))
+			if(!lastInTouch)
 			{
 				skinHelper.UpdateCollisionMesh();
 				ret = co.Raycast (ray, out hit, 100.0f);
+				lastInTouch = ret;
 			}
-			lastMouseDown = Input.GetMouseButton(0);
 
 			if(ret)
 			{
 				lastTouchTime = Time.time;
 				state = State.Touch;
+				lastInTouch = false;
+				interact.DisableAllCrosshairHandButThis(this);
 			}
+
+			if(ret)
+				SetCrosshairColor(colorTouch);
+			else
+				SetCrosshairColor(colorNotTouch);
 			break;
 		case State.Touch:
 			ret = false;
-			if(Input.GetMouseButton(0))
-			{
-				skinHelper.UpdateCollisionMesh();
-				ret = co.Raycast (ray, out hit, 100.0f);
+			skinHelper.UpdateCollisionMesh();
+			ret = co.Raycast (ray, out hit, 100.0f);
 
-				if(ret)
-				{
-					if(Time.time - lastTouchTime >= touchTime)
-					{
-						state = State.Grasp;
-						limbIK.solver.IKPositionWeight = 1.0f;
-						limbIK.solver.IKRotationWeight = 0.5f;
-						limbIK.solver.IKPosition = hit.point;
-						firstPosition = hit.point;
-					}
-				}
-				else
-				{
-					state = State.None;
-				}
-			}
-			break;
-		case State.Grasp:
-			if(!Input.GetMouseButton(0))
+			if(ret)
 			{
-				state = State.GraspFade;
-				velPosition = 0.0f;
-				velRotation = 0.0f;
+				if(Time.time - lastTouchTime >= touchTime)
+				{
+					state = State.Grasp;
+					limbIK.solver.IKPositionWeight = 1.0f;
+					limbIK.solver.IKRotationWeight = 0.5f;
+					limbIK.solver.IKPosition = hit.point;
+					firstPosition = hit.point;
+				}
 			}
 			else
 			{
-				Ray rayCur = Camera.main.ScreenPointToRay(Input.mousePosition);
-				Vector3 posCur = PetHelper.ProjectPointLine(limbIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));
-				Vector3 firstInLocal = Quaternion.Inverse(goDog.transform.rotation) * firstPosition;
-				Vector3 curInLocal = Quaternion.Inverse(goDog.transform.rotation) * posCur;
-				curInLocal.x = Mathf.Clamp(curInLocal.x, firstInLocal.x + minOffset.x, firstInLocal.x + maxOffset.x);
-				curInLocal.y = Mathf.Clamp(curInLocal.y, firstInLocal.y + minOffset.y, firstInLocal.y + maxOffset.y);
-				curInLocal.z = Mathf.Clamp(curInLocal.z, firstInLocal.z + minOffset.z, firstInLocal.z + maxOffset.z);
-				Vector3 curInWorld = goDog.transform.rotation * curInLocal;
-				limbIK.solver.IKPosition = curInWorld;
+				state = State.None;
+				interact.EnableAllCrosshairHand();
 			}
+
+			if(ret)
+				SetCrosshairColor(colorTouch);
+			else
+				SetCrosshairColor(colorNotTouch);
+
+			break;
+		case State.Grasp:
+			ret = false;
+			skinHelper.UpdateCollisionMesh();
+			ret = co.Raycast (ray, out hit, 100.0f);
+
+			Ray rayCur = ray;
+			Vector3 posCur = PetHelper.ProjectPointLine(limbIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));
+			Vector3 firstInLocal = Quaternion.Inverse(goDog.transform.rotation) * firstPosition;
+			Vector3 curInLocal = Quaternion.Inverse(goDog.transform.rotation) * posCur;
+			curInLocal.x = Mathf.Clamp(curInLocal.x, firstInLocal.x + minOffset.x, firstInLocal.x + maxOffset.x);
+			curInLocal.y = Mathf.Clamp(curInLocal.y, firstInLocal.y + minOffset.y, firstInLocal.y + maxOffset.y);
+			curInLocal.z = Mathf.Clamp(curInLocal.z, firstInLocal.z + minOffset.z, firstInLocal.z + maxOffset.z);
+			Vector3 curInWorld = goDog.transform.rotation * curInLocal;
+			limbIK.solver.IKPosition = curInWorld;
+
+			if(ret)
+				SetCrosshairColor(colorTouch);
+			else
+				SetCrosshairColor(colorNotTouch);
 			break;
 		case State.GraspFade:
 			if (limbIK.solver.IKPositionWeight != 0.0f)
@@ -129,6 +160,7 @@ public class GraspVR : CrosshairHand {
 				limbIK.solver.IKPositionWeight = 0.0f;
 				limbIK.solver.IKRotationWeight = 0.0f;
 				state = State.None;
+				interact.EnableAllCrosshairHand();
 			}
 			break;
 		}
@@ -140,6 +172,43 @@ public class GraspVR : CrosshairHand {
 			Destroy (go.GetComponent<MeshCollider> ());
 			Destroy (go.GetComponent<SkinnedCollisionHelper> ());
 			Destroy (go.GetComponent<LimbIK> ());
+		}
+
+		OVRTouchpad.TouchHandler -= LocalTouchEventCallback;
+	}
+
+	void LocalTouchEventCallback(object sender, EventArgs args)
+	{
+		var touchArgs = (OVRTouchpad.TouchArgs)args;
+		OVRTouchpad.TouchEvent touchEvent = touchArgs.TouchType;
+		
+		switch(touchEvent)
+		{
+		case OVRTouchpad.TouchEvent.SingleTap:
+			//Debug.Log("SINGLE CLICK\n");
+			if(state == State.Grasp)
+			{
+				state = State.GraspFade;
+				velPosition = 0.0f;
+				velRotation = 0.0f;
+			}
+			break;
+			
+		case OVRTouchpad.TouchEvent.Left:
+			//Debug.Log("LEFT SWIPE\n");
+			break;
+			
+		case OVRTouchpad.TouchEvent.Right:
+			//Debug.Log("RIGHT SWIPE\n");
+			break;
+			
+		case OVRTouchpad.TouchEvent.Up:
+			//Debug.Log("UP SWIPE\n");
+			break;
+			
+		case OVRTouchpad.TouchEvent.Down:
+			//Debug.Log("DOWN SWIPE\n");
+			break;
 		}
 	}
 }
