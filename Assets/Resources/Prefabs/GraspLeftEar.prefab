@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 441338}
   - 114: {fileID: 11441338}
+  - 114: {fileID: 11446054}
   m_Layer: 0
   m_Name: GraspLeftEar
   m_TagString: Untagged
@@ -34,7 +35,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 071646f713a72434aa4e09e1ed41771a, type: 3}
   m_Name: 
@@ -50,6 +51,30 @@ MonoBehaviour:
   animatorLayer: 4
   animName: ear
   method: 1
+--- !u!114 &11446054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605cd2141b6287f4f9ac7a42d3db12b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  partName: lear
+  boneNames:
+  - Bone06
+  - Bone19
+  - Bone07
+  rootName: Bip01
+  touchTime: 1
+  animatorLayer: 4
+  animName: ear
+  method: 0
+  colorTouch: {r: 1, g: 1, b: 1, a: 1}
+  colorNotTouch: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
