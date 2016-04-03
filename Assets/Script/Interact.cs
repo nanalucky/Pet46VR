@@ -7,6 +7,12 @@ public class Interact : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		var goDog = GameObject.FindGameObjectWithTag ("dog");
+		var goCrosshair = goDog.GetComponent<DogController> ().goCrosshair;
+		var goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
+		goCrosshair.SetActive (false);
+		goCrosshairTouch.SetActive (true);
+
 		GameObject goLookCamera = Instantiate (Resources.Load ("Prefabs/LookCamera")) as GameObject;
 		goLookCamera.transform.parent = gameObject.transform;
 
@@ -38,4 +44,5 @@ public class Interact : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	}
+
 }

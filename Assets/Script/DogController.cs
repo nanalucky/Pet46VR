@@ -31,6 +31,9 @@ public class DogController : MonoBehaviour {
 	public Button btnInteract;
 	public Button btnBall;
 
+	public GameObject goCrosshair;
+	public GameObject goCrosshairTouch;
+
 	private float lookatBodyWeight;
 	private float lookatHeadWeight;
 	private float lookatEyeWeight;
@@ -266,6 +269,8 @@ public class DogController : MonoBehaviour {
 		btnBall.interactable = true;
 		btnRecord.interactable = true;
 		btnPlay.interactable = true;
+		goCrosshair.SetActive (true);
+		goCrosshairTouch.SetActive (false);
 	}
 
 	public void ToRobot()

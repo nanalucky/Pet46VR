@@ -26,6 +26,9 @@ public class NoTouchGUI : MonoBehaviour
 	//private bool				homeButtonPressed = false;
 	private float				homeButtonDownTime = 0.0f;
 
+	private GameObject			goCrosshair;
+	private GameObject			goCrosshairTouch;
+
 	/// <summary>
 	/// Initialization
 	/// </summary>
@@ -45,6 +48,13 @@ public class NoTouchGUI : MonoBehaviour
 		}
 		// hide the menu to start
 		ShowRenderers( false );
+	}
+
+	void Start()
+	{
+		var goDog = GameObject.FindGameObjectWithTag ("dog");
+		goCrosshair = goDog.GetComponent<DogController> ().goCrosshair;
+		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
 	}
 
 	/// <summary>
@@ -85,6 +95,11 @@ public class NoTouchGUI : MonoBehaviour
 	void ShowRenderers(bool show)
 	{
 		panel.SetActive (show);
+
+		if (goCrosshair != null) {
+			goCrosshair.SetActive(true);
+			goCrosshairTouch.SetActive(false);
+		}
 	}
 
 	/// <summary>
