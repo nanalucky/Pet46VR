@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Interact : MonoBehaviour {
 
+	private CrosshairHand[] crosshairHand;
+
 	// Use this for initialization
 	void Start () {
 		var goDog = GameObject.FindGameObjectWithTag ("dog");
@@ -39,10 +41,28 @@ public class Interact : MonoBehaviour {
 
 		GameObject goGesture = Instantiate (Resources.Load ("Prefabs/Gesture")) as GameObject;
 		goGesture.transform.parent = gameObject.transform;
+
+		crosshairHand = FindObjectsOfType (typeof(CrosshairHand)) as CrosshairHand[];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 
+	public void DisableAllCrosshairHandButThis(CrosshairHand ch)
+	{
+		foreach (CrosshairHand obj in crosshairHand) 
+		{
+			if(obj != ch)
+				obj.enabled = false;
+		}
+	}
+
+	public void EnableAllCrosshairHand()
+	{
+		foreach (CrosshairHand obj in crosshairHand) 
+		{
+			obj.enabled = true;
+		}
+	}
 }

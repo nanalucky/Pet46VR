@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TouchVR : MonoBehaviour {
+public class TouchVR : CrosshairHand {
 
 	public enum State
 	{
@@ -37,8 +37,7 @@ public class TouchVR : MonoBehaviour {
 	private static int headTimes = 0;
 	private static int backTimes = 0;
 
-	private TouchVR[] touches;
-	private bool firstFrame = true;
+	private Interact interact;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +48,7 @@ public class TouchVR : MonoBehaviour {
 		skinHelper.updateOncePerFrame = false;
 		co = go.GetComponent<MeshCollider> ();
 		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
+		interact = FindObjectOfType (typeof(Interact)) as Interact;
 
 		timeInTouch = 0.0f;
 		timeNotInTouch = 0.0f;
@@ -79,31 +79,9 @@ public class TouchVR : MonoBehaviour {
 		sr.color = color;
 	}
 
-	void DisableAllTouchesButThis()
-	{
-		foreach( TouchVR obj in touches )
-		{
-			if(obj != this)
-				obj.enabled = false;
-		}
-	}
 
-	void EnableAllTouches()
-	{
-		foreach( TouchVR obj in touches )
-		{
-			obj.enabled = true;
-		}
-	}
-	
 	// Update is called once per frame
 	void Update () {
-		if (firstFrame) 
-		{
-			firstFrame = false;
-			touches = FindObjectsOfType(typeof(TouchVR)) as TouchVR[];
-		}
-
 		Vector3 fwd = goCrosshairTouch.transform.TransformDirection(Vector3.forward);
 		Ray ray = new Ray (goCrosshairTouch.transform.position, fwd);
 		RaycastHit hit;
@@ -126,7 +104,7 @@ public class TouchVR : MonoBehaviour {
 				lastRotation = goCrosshairTouch.transform.rotation;
 				lastRotationTime = Time.time;
 				lastInTouch = false;
-				DisableAllTouchesButThis();
+				interact.DisableAllCrosshairHandButThis(this);
 			}
 
 			if(ret)
@@ -196,7 +174,7 @@ public class TouchVR : MonoBehaviour {
 			else
 			{
 				state = State.None;
-				EnableAllTouches();
+				interact.EnableAllCrosshairHand();
 			}
 
 			if(ret)
@@ -235,7 +213,7 @@ public class TouchVR : MonoBehaviour {
 				if(Time.time - timeNotInTouch > timeOutEnjoy)
 				{
 					state = State.None;
-					EnableAllTouches();
+					interact.EnableAllCrosshairHand();
 					switch(aniset)
 					{
 					case 0:
