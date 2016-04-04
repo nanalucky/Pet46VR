@@ -65,4 +65,14 @@ public class Interact : MonoBehaviour {
 			obj.enabled = true;
 		}
 	}
+
+	public bool IsCrosshairInState()
+	{
+		foreach (CrosshairHand obj in crosshairHand) 
+		{
+			if(obj.IsInState())
+				return true;
+		}
+		return false;
+	}
 }

@@ -12,4 +12,9 @@ public class CrosshairHand : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public virtual bool IsInState()
+	{
+		return false;
+	}
 }

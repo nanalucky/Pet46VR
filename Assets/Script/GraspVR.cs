@@ -65,6 +65,13 @@ public class GraspVR : CrosshairHand {
 		SetCrosshairColor (colorNotTouch);
 	}
 	
+	public virtual bool IsInState()
+	{
+		if (state == State.None)
+			return false;
+		return true;
+	}
+
 	void SetCrosshairColor(Color color)
 	{
 		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();

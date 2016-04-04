@@ -11,11 +11,6 @@ public class RotateCameraVR : MonoBehaviour {
 	private float mouseX = 0f;
 	private float mouseY = 0f;
 
-	void Awake()
-	{
-		DontDestroyOnLoad(gameObject);
-	}
-
 	// Use this for initialization
 	void Start () {
 		goDog = GameObject.FindGameObjectWithTag ("dog");
@@ -25,8 +20,6 @@ public class RotateCameraVR : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		OVRTouchpad.Update();
-
 		if (Input.GetMouseButton(1))
 		{
 			RotateCamera(Input.GetAxis("Mouse X") * MouseSensitivity);
@@ -51,30 +44,25 @@ public class RotateCameraVR : MonoBehaviour {
 		switch(touchEvent)
 		{
 		case OVRTouchpad.TouchEvent.SingleTap:
-			//Debug.Log("SINGLE CLICK\n");
-			break;
-			
-		case OVRTouchpad.TouchEvent.Left:
-			//Debug.Log("LEFT SWIPE\n");
 			mouseYOffset += MouseSensitivity;
 			break;
 			
+		case OVRTouchpad.TouchEvent.Left:
+			//mouseYOffset += MouseSensitivity;
+			break;
+			
 		case OVRTouchpad.TouchEvent.Right:
-			//Debug.Log("RIGHT SWIPE\n");
-			mouseYOffset -= MouseSensitivity;
+			//mouseYOffset -= MouseSensitivity;
 			break;
 			
 		case OVRTouchpad.TouchEvent.Up:
-			//Debug.Log("UP SWIPE\n");
 			break;
 			
 		case OVRTouchpad.TouchEvent.Down:
-			//Debug.Log("DOWN SWIPE\n");
 			break;
 		}
 
 		RotateCamera (mouseYOffset);
-
 	}
 
 	void RotateCamera(float mouseYOffset)
@@ -91,6 +79,5 @@ public class RotateCameraVR : MonoBehaviour {
 		
 		mainCamera.transform.rotation = Quaternion.Euler(mouseX, mouseY, mainCamera.transform.rotation.eulerAngles.z);
 		mainCamera.transform.position = lookat + mainCamera.transform.rotation * (new Vector3(0, 0, -rayDist));
-
 	}
 }

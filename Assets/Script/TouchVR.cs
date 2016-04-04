@@ -58,6 +58,13 @@ public class TouchVR : CrosshairHand {
 		SetCrosshairColor (colorNotTouch);
 	}
 
+	public virtual bool IsInState()
+	{
+		if (state == State.None)
+			return false;
+		return true;
+	}
+
 	bool InTouch()
 	{
 		if (lastRotation == Quaternion.identity || goCrosshairTouch.transform.rotation != lastRotation) 

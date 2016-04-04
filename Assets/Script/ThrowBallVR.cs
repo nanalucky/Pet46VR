@@ -44,15 +44,9 @@ public class ThrowBallVR : MonoBehaviour {
 			goDog.GetComponent<DogController>().EnableLookatIK(true);
 		}
 
-		OVRTouchpad.Update();
 		lookatIK.solver.IKPosition = goBall.transform.position;
 
 		goBall.transform.position = cameraController.centerEyeAnchor.position + cameraController.centerEyeAnchor.rotation * (new Vector3(0, 0, goDog.GetComponent<DogController>().ballDistance));
-	}
-
-	public void OnDisable()
-	{
-		//OVRTouchpad.OnDisable();
 	}
 
 	void OnDestroy()
