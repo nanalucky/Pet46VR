@@ -1,0 +1,80 @@
+an  Android Plugin for Unity3d that will help you access features on Android devices with in unity3d.<br><br>
+
+This plugin will speeds up your work and saves a lot of time compare on creating your own plugin which requires learning, researching, coding and testing on how to make things work.<br><br>
+
+<STRONG>List of Features:</STRONG><br><br>
+
+<STRONG>Note: Does not extend UnityPlayerActivity</STRONG><br><br>
+
+1.  Local Notification<br>
+2.  Screen Shot and Share Image<br>
+3.  Share Text<br>
+4.  GPS<br>
+5.  Speech To Text<br>
+6.  Text To Speech<br>
+7.  Immersive Full Screen Mode<br>
+8.  Voice audio recorder with modify pitch<br>
+9. Google App indexing<br>
+10. Get Android package id at Runtime<br>
+11. Get Android version at Runtime<br>
+12. Get Battery Life Percentage<br>
+13. Get Time<br>
+14. Flash light<br>
+15. Normal vibration<br>
+16. Vibration with pattern<br>
+17. Native loading UI<br>
+18. Native Rate my App Popup<br>
+19. Native Alert Popup<br>
+20. Native Toast Message<br>
+21. Set One Time Alarm<br>
+22. Set Repeating Alarm<br>
+23. Set Alarm with Interval<br>
+24. Camera - Take Picture using camera and then share<br>
+25. Image Picker - get image from device and then share<br>
+26. Get Existing Texture from unity3d and then share<br>
+27. Download Image from web and then share<br>
+28. Get Android ID<br>
+29. Get Telephony Device ID<br>
+30. Get Telephony Sim Serial Number<br>
+31. Get Android Advertising ID<br>
+32. Generate Unique ID<br>
+33. Get Wifi IP<br>
+34. Get Wifi SSID<br>
+35. Get Wifi BSSID<br>
+36. Get Wifi Rssi<br>
+37. Get Wifi Speed in MBS<br>
+38. Get Wifi Signal Strength<br>
+39. Check if Wifi Connected<br>
+40. Check if Mobile Connected<br>
+41. Check if Wifi Connection is Fast<br>
+42. Check if Mobile Connection is Fast<br>
+43. Text To Speech Set Locale ex. US,UK,Japanese (20 selections)<br>
+44. Text To Speech Set Pitch<br>
+45. Text To Speech Set Speech Rate<br>
+46. Text To Speech added Events OnStartSpeech,OnDoneSpeech and OnError<br>
+47. Get Account Name(Depends on device settings)<br>
+48. Get Account Email(Depends on device settings)<br>
+49. Get Account Phone Number(Depends on device settings)<br>
+50. Get Contact Name(Depends on device settings)<br>
+51. Get Contact Phone(Depends on device settings)<br>
+52. Create Folder on Pictures or DCIM Directory<br>
+53. Get Picture Directory Path<br>
+54. Get DCIM Directory Path<br>
+55. TTS get available locale on device<br><br>
+
+
+<STRONG>Lots of Features in Affordable price</STRONG><br><br>
+
+<STRONG>This is a Super Value Deal, Grab a copy now, while the price is Affordable</STRONG><br><br>
+
+<STRONG>For more Information:</STRONG><br>
+
+<p><a href="http://www.gigadrillgames.com/android-ultimate-plugin/">Details | </a> <a href="http://www.gigadrillgames.com/2015/07/26/list-of-tutorials-for-android-ultimate-plugin/"> Tutorials | </a> <a href="http://www.gigadrillgames.com/2015/07/29/faq-android-ultimate-plugin/"> FAQ </a><br><br>
+
+<STRONG>Try Apk Demo:</STRONG><br>
+<a href="http://www.gigadrillgames.com/2015/08/21/android-ultimate-plugin-demo/"> Demo </a><br><br>
+
+
+<STRONG>For questions or suggestions or any feedback just contact us by email</STRONG> <br>
+
+<p><a href="mailto:gigadrillgames@gmail.com">gigadrillgames@gmail.com</a><br>

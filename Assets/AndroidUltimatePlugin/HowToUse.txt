@@ -1,0 +1,174 @@
+================================================================================================================================
+                                                Android Ultimate Plugin
+================================================================================================================================
+
+
+an  Android Plugin for Unity3d that will help you access features on Android devices with in unity3d.
+This plugin will speeds up your work and saves a lot of time compare on creating your own plugin which requires learning
+,researching, coding and testing on how to make things work.
+
+
+
+================================================================================================================================
+                                                How to use
+================================================================================================================================
+
+1. make sure you have downloaded Android SDK from this website
+https://developer.android.com/sdk/index.html
+
+2. after downloading Android SDK locate the google play library folder on the SDK directory "SDK_ROOT_Directory/extras/google/google_play_services/libproject"
+and then copy the google-play-services_lib to your Unity3d Project Directory "Assets/Plugins/Android"
+
+Note: if you are using unity3d version 5 and above you don't need to do the step number 3
+
+3. Copy the Android Manifest file that can be find at "Assets/Plugins/Android/SampleAndroidManifest"
+and paste it on "Assets/Plugins/Android" directory this is the most tricky part without doing this nothing will happen
+or your application might crashed or stop.
+
+4. Inside Unity3d go to File Menu, Build Settings and then select player settings and look for other settings
+and change the bundle indentifier to your game or app bundle identifier for ex. com.mycoolstudio.awesomegame
+
+5. Inside Unity3d in your Project hierarchy go to "Assets/AndroidUltimatePlugin/Scenes" and open the Demo scene
+
+6. Inside Unity3d go to File Menu, Build Settings and then make sure that you added Demo Scene on Scenes in Build on building settings
+if it's already added then its ready.
+
+7. Inside Unity3d go to File Menu, Build Settings and then select Build and Run
+
+8. wait for the build and then check the application if everything is working fine and that's it.
+
+=================================================================================================================================================================
+	Still Confused on how to run the demo? well there's an images steps included on this plugin folder you can view that and see the step by step guide or
+	visit this link http://www.gigadrillgames.com/2015/12/13/android-ultimate-plugin-step-by-step-how-to-setup-and-run-the-demo-scene/
+==================================================================================================================================================================
+
+================================================================================================================================
+                                                Known Issues
+================================================================================================================================
+
+Note: on this plugin there's a known issues and sorry we can't do something about this because this is out of our scope.
+
+1. On Account Info the Account name, phone number and email don't always show because this is depends on the manufacturer of your
+Android device some of them hide it or some of them really don't put it to avoid other application to get
+this sensitive informations.
+
+2. On Contact Info most of the time it shows but like the above case some Android Device Manufacturer is hiding this or not allowing
+other applications to access because again this is a sensitive informations.
+
+3. On Account Info some times the email address is shown multiple times because this email address is came from different
+source like gmail account, yahoo account and other account that store email address.
+
+4. On Internet Demo some people experiencing some negative wifi ip, we really don't know why is this happening
+but most of the time everything is working fine.
+
+5. when alarm is fired and when application is running and then you quit the application,then you click notification of alarm it will not open the app it will just hang
+if this happens you need to force quit the application, still finding solution for this.
+
+6. we just added ability to use from camera but right now it only support when Android Device is in portrait because when orientation is Landscape the image rotation is upside down
+
+7. some people are experiencing problem when integrating google play services from this github https://github.com/playgameservices/play-games-plugin-for-unity, we are going to 
+check why, we will try to fix this soon. 
+
+========================================================================================================================================
+											Use at your own risk
+========================================================================================================================================
+
+1. Blue tooth connectivity feature is working but on some other people who use this plugin have encounter problems, so we think that this feature is very risky to use so 
+we suggest that don't use it but we are not going to remove it. if you want to use it go but if you encounter problem its not our problem anymore because we already warn you.
+
+================================================================================================================================
+                                                List of Features
+================================================================================================================================
+
+Note: Does not extend UnityPlayerActivity
+
+1.  Local Notification
+2.  Screen Shot and Share Image
+3.  Share Text
+4.  GPS
+5.  Speech To Text
+6.  Text To Speech
+7.  Immersive Full Screen Mode
+8.  Voice audio recorder with modify pitch
+9. Google App indexing
+10. Get Android package id at Runtime
+11. Get Android version at Runtime
+12. Get Battery Life Percentage
+13. Get Time
+14. Flash light
+15. Normal vibration
+16. Vibration with pattern
+17. Native loading UI
+18. Native Rate my App Popup
+19. Native Alert Popup
+20. Native Toast Message
+21. Set One Time Alarm
+22. Set Repeating Alarm
+23. Set Alarm with Interval
+24. Camera - Take Picture using camera and then share
+25. Image Picker - get image from device and then share
+26. Get Existing Texture from unity3d and then share
+27. Download Image from web and then share
+28. Get Android ID
+29. Get Telephony Device ID
+30. Get Telephony Sim Serial Number
+31. Get Android Advertising ID
+32. Generate Unique ID
+33. Get Wifi IP
+34. Get Wifi SSID
+35. Get Wifi BSSID
+36. Get Wifi Rssi
+37. Get Wifi Speed in MBS
+38. Get Wifi Signal Strength
+39. Check if Wifi Connected
+40. Check if Mobile Connected
+41. Check if Wifi Connection is Fast
+42. Check if Mobile Connection is Fast
+43. Text To Speech Set Locale ex. US,UK,Japanese (20 selections)
+44. Text To Speech Set Pitch
+45. Text To Speech Set Speech Rate
+46. Text To Speech added Events OnStartSpeech,OnDoneSpeech and OnError
+47. Get Account Name
+48. Get Account Email
+49. Get Account Phone Number
+50. Get Contact Name
+51. Get Contact Phone
+52. Create Folder on Pictures or DCIM Directory
+53. Get Picture Directory Path
+54. Get DCIM Directory Path
+55. TTS get available locale on device
+
+
+================================================================================================================================
+                                                More Information
+================================================================================================================================
+
+
+For more Details:
+http://www.gigadrillgames.com/android-ultimate-plugin/
+
+For Tutorials
+http://www.gigadrillgames.com/2015/07/26/list-of-tutorials-for-android-ultimate-plugin/
+
+For Frequently Asked Questions
+http://www.gigadrillgames.com/2015/07/29/faq-android-ultimate-plugin/
+
+For Forums Questions and answers
+http://www.gigadrillgames.com/questions/
+
+
+================================================================================================================================
+                                                Demo APK
+================================================================================================================================
+
+
+Try Apk Demo:
+http://www.gigadrillgames.com/2015/08/21/android-ultimate-plugin-demo/
+
+
+================================================================================================================================
+                                                Contacts
+================================================================================================================================
+
+
+For questions or suggestions or any feedback just contact us at gigadrillgames@gmail.com

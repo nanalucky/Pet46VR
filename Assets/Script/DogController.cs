@@ -33,6 +33,7 @@ public class DogController : MonoBehaviour {
 
 	public GameObject goCrosshair;
 	public GameObject goCrosshairTouch;
+	public GameObject btnSpeechRecognizer;
 
 	private float lookatBodyWeight;
 	private float lookatHeadWeight;
@@ -40,6 +41,7 @@ public class DogController : MonoBehaviour {
 
 	private Animator animator;
 	private GameObject mainCamera;
+	private NoTouchGUI noTouchGUI;
 
 	[HideInInspector] public bool volumeEnabled = true;
 	[HideInInspector] public bool volumeMute = false;
@@ -52,6 +54,7 @@ public class DogController : MonoBehaviour {
 		lookatBodyWeight = gameObject.GetComponent<LookAtIK> ().solver.bodyWeight;
 		lookatHeadWeight = gameObject.GetComponent<LookAtIK> ().solver.headWeight;
 		lookatEyeWeight = gameObject.GetComponent<LookAtIK> ().solver.eyesWeight;
+		noTouchGUI = FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI;
 	}
 
 	void Update(){
@@ -77,7 +80,7 @@ public class DogController : MonoBehaviour {
 			RectTransform rectTransform = (btnInteractOral.transform) as RectTransform;
 			bool overButton = RectTransformUtility.RectangleContainsScreenPoint(rectTransform, new Vector2(Input.mousePosition.x, Input.mousePosition.y), null);
 			if (Input.GetMouseButton (0) && overButton) {
-				if(!word.GetComponent<Word>().IsEnableDetect())
+				if(word.activeInHierarchy && !word.GetComponent<Word>().IsEnableDetect())
 				{
 					word.GetComponent<Word>().EnableDetect(true);
 					word.GetComponent<Word>().interact = true;
@@ -86,7 +89,7 @@ public class DogController : MonoBehaviour {
 			}
 			else
 			{
-				if(word.GetComponent<Word>().IsEnableDetect())
+				if(word.activeInHierarchy && word.GetComponent<Word>().IsEnableDetect())
 				{
 					word.GetComponent<Word>().EnableDetect(false);
 					word.GetComponent<Word>().interact = false;
@@ -260,8 +263,10 @@ public class DogController : MonoBehaviour {
 		Destroy(GameObject.FindGameObjectWithTag("Order"));
 
 		//record.SetActive (false);
-		word.GetComponent<Word> ().EnableDetect (false);
-		word.GetComponent<Word>().interact = false;
+		if (word.activeInHierarchy) {
+			word.GetComponent<Word> ().EnableDetect (false);
+			word.GetComponent<Word> ().interact = false;
+		}
 
 		btnInteract.interactable = true;
 		btnInteractOral.interactable = true;
@@ -271,6 +276,7 @@ public class DogController : MonoBehaviour {
 		btnPlay.interactable = true;
 		goCrosshair.SetActive (true);
 		goCrosshairTouch.SetActive (false);
+		noTouchGUI.ShowSpeechRecognizer (false);
 	}
 
 	public void ToRobot()
@@ -279,7 +285,7 @@ public class DogController : MonoBehaviour {
 		Instantiate(Resources.Load("Prefabs/RobotScript"));
 		EnableMusicAndEffect (true);
 		btnRobot.interactable = false;
-		GameObject.Find ("NoTouchGUI").GetComponent<NoTouchGUI> ().Show (false);
+		noTouchGUI.Show (false);
 	}
 
 	public void ToInteract()
@@ -290,7 +296,7 @@ public class DogController : MonoBehaviour {
 
 		btnInteract.interactable = false;
 		btnInteractOral.interactable = false;
-		GameObject.Find ("NoTouchGUI").GetComponent<NoTouchGUI> ().Show (false);
+		noTouchGUI.Show (false);
 	}
 
 	public void ToInteract2()
@@ -320,7 +326,7 @@ public class DogController : MonoBehaviour {
 		Instantiate(Resources.Load("Prefabs/EnterBall"));
 		EnableMusicAndEffect (true);
 		//btnBall.interactable = false;
-		GameObject.Find ("NoTouchGUI").GetComponent<NoTouchGUI> ().Show (false);
+		noTouchGUI.Show (false);
 	}
 
 	public void ToExercise()

@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class Interact : MonoBehaviour {
 
 	private CrosshairHand[] crosshairHand;
+	private GameObject goPointer;
+	private GameObject goDog;
+	private GameObject goCrosshair;
+	private GameObject goCrosshairTouch;
 
 	// Use this for initialization
 	void Start () {
-		var goDog = GameObject.FindGameObjectWithTag ("dog");
-		var goCrosshair = goDog.GetComponent<DogController> ().goCrosshair;
-		var goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
+		goDog = GameObject.FindGameObjectWithTag ("dog");
+		goCrosshair = goDog.GetComponent<DogController> ().goCrosshair;
+		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
 		goCrosshair.SetActive (false);
 		goCrosshairTouch.SetActive (true);
 
@@ -43,10 +47,34 @@ public class Interact : MonoBehaviour {
 		goGesture.transform.parent = gameObject.transform;
 
 		crosshairHand = FindObjectsOfType (typeof(CrosshairHand)) as CrosshairHand[];
+		(FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI).ShowSpeechRecognizer (true);
+		goPointer = GameObject.Find ("pointer");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!IsCrosshairInState ()) 
+		{
+			Vector3 fwd = goPointer.transform.TransformDirection(Vector3.forward);
+			RaycastHit hit;
+			if (Physics.Raycast(goPointer.transform.position, fwd, out hit, 100.0f)
+			    && hit.transform.gameObject.GetComponent<BNG_ZapperAction>() != null)
+			{
+				if(goCrosshairTouch.activeInHierarchy)
+				{
+					goCrosshairTouch.SetActive(false);
+					goCrosshair.SetActive(true);
+				}
+			}
+			else
+			{
+				if(!goCrosshairTouch.activeInHierarchy)
+				{
+					goCrosshairTouch.SetActive(true);
+					goCrosshair.SetActive(false);
+				}
+			}
+		}
 	}
 
 	public void DisableAllCrosshairHandButThis(CrosshairHand ch)
