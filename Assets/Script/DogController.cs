@@ -347,6 +347,17 @@ public class DogController : MonoBehaviour {
 		btnPlay.interactable = false;
 	}
 
+	public void ToSpeech()
+	{
+		ClearAll ();
+		Instantiate(Resources.Load("Prefabs/EnterSpeech"));
+		EnableMusicAndEffect (true);
+		
+		btnInteract.interactable = false;
+		btnInteractOral.interactable = false;
+		noTouchGUI.Show (false);
+	}
+
 	public void PlayAudioEffect(string clipname)
 	{
 		string[] ret = clipname.Split (',');

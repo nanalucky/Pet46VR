@@ -132,7 +132,7 @@ public class SpeechRecognizer : MonoBehaviour {
 
 	void ApplyState(State state)
 	{
-		if (interact.IsCrosshairInState ())
+		if (interact && interact.IsCrosshairInState ())
 			return;
 
 		switch (state) 

@@ -26,6 +26,8 @@ public class GraspVR : CrosshairHand {
 
 	public Color colorTouch = Color.white;
 	public Color colorNotTouch = Color.red;
+	private Sprite spriteTouch;
+	private Sprite spriteNotTouch;
 
 	private GameObject goDog;
 	private GameObject go;
@@ -62,7 +64,9 @@ public class GraspVR : CrosshairHand {
 		limbIK.solver.IKPositionWeight = 0.0f;
 		limbIK.solver.IKRotationWeight = 0.0f;
 
-		SetCrosshairColor (colorNotTouch);
+		spriteTouch = Resources.Load<Sprite> ("UI/vrpointer2");
+		spriteNotTouch = Resources.Load<Sprite> ("UI/vrpointer1");
+		SetCrosshair (false);
 	}
 	
 	public virtual bool IsInState()
@@ -76,6 +80,16 @@ public class GraspVR : CrosshairHand {
 	{
 		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
 		sr.color = color;
+	}
+
+	void SetCrosshair(bool bTouch)
+	{
+		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
+		if (bTouch) {
+			sr.sprite = spriteTouch;
+		} else {
+			sr.sprite = spriteNotTouch;
+		}
 	}
 
 	// Update is called once per frame
@@ -103,9 +117,9 @@ public class GraspVR : CrosshairHand {
 			}
 
 			if(ret)
-				SetCrosshairColor(colorTouch);
+				SetCrosshair(true);
 			else
-				SetCrosshairColor(colorNotTouch);
+				SetCrosshair(false);
 			break;
 		case State.Touch:
 			ret = false;
@@ -127,13 +141,8 @@ public class GraspVR : CrosshairHand {
 			{
 				state = State.None;
 				interact.EnableAllCrosshairHand();
+				SetCrosshair(false);
 			}
-
-			if(ret)
-				SetCrosshairColor(colorTouch);
-			else
-				SetCrosshairColor(colorNotTouch);
-
 			break;
 		case State.Grasp:
 			ret = false;
@@ -149,6 +158,7 @@ public class GraspVR : CrosshairHand {
 				state = State.GraspFade;
 				velPosition = 0.0f;
 				velRotation = 0.0f;
+				SetCrosshair(false);
 			}
 			else
 			{
@@ -158,11 +168,6 @@ public class GraspVR : CrosshairHand {
 				Vector3 curInWorld = goDog.transform.rotation * curInLocal;
 				limbIK.solver.IKPosition = curInWorld;
 			}
-
-			if(ret)
-				SetCrosshairColor(colorTouch);
-			else
-				SetCrosshairColor(colorNotTouch);
 			break;
 		case State.GraspFade:
 			if (limbIK.solver.IKPositionWeight != 0.0f)

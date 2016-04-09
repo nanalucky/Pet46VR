@@ -22,6 +22,12 @@ public class UIController : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("dog").GetComponent<DogController> ().ToInteract ();
 	}
 
+	public void OnClickSpeech()
+	{
+		GameObject.FindGameObjectWithTag ("dog").GetComponent<DogController> ().ToSpeech ();
+	}
+
+
 	public void OnClickBall()
 	{
 		GameObject.FindGameObjectWithTag ("dog").GetComponent<DogController> ().ToBall ();

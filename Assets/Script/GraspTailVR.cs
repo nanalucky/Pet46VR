@@ -29,6 +29,8 @@ public class GraspTailVR : CrosshairHand {
 
 	public Color colorTouch = Color.white;
 	public Color colorNotTouch = Color.red;
+	private Sprite spriteTouch;
+	private Sprite spriteNotTouch;
 
 	private GameObject goDog;
 	private GameObject go;
@@ -65,7 +67,9 @@ public class GraspTailVR : CrosshairHand {
 		ccdIK.solver.IKPositionWeight = 0.0f;
 		rotationLimits = GameObject.Find (boneNames [0]).GetComponentsInChildren<RotationLimit> ();
 
-		SetCrosshairColor (colorNotTouch);
+		spriteTouch = Resources.Load<Sprite> ("UI/vrpointer2");
+		spriteNotTouch = Resources.Load<Sprite> ("UI/vrpointer1");
+		SetCrosshair (false);
 	}
 	
 	public virtual bool IsInState()
@@ -79,6 +83,16 @@ public class GraspTailVR : CrosshairHand {
 	{
 		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
 		sr.color = color;
+	}
+
+	void SetCrosshair(bool bTouch)
+	{
+		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
+		if (bTouch) {
+			sr.sprite = spriteTouch;
+		} else {
+			sr.sprite = spriteNotTouch;
+		}
 	}
 
 	// Update is called once per frame
@@ -106,9 +120,9 @@ public class GraspTailVR : CrosshairHand {
 			}
 
 			if(ret)
-				SetCrosshairColor(colorTouch);
+				SetCrosshair(true);
 			else
-				SetCrosshairColor(colorNotTouch);
+				SetCrosshair(false);
 			break;
 		case State.Touch:
 			ret = false;
@@ -130,12 +144,8 @@ public class GraspTailVR : CrosshairHand {
 			{
 				state = State.None;
 				interact.EnableAllCrosshairHand();
+				SetCrosshair(false);
 			}
-			
-			if(ret)
-				SetCrosshairColor(colorTouch);
-			else
-				SetCrosshairColor(colorNotTouch);
 			break;
 		case State.Grasp:
 			ret = false;
@@ -148,6 +158,7 @@ public class GraspTailVR : CrosshairHand {
 			{
 				state = State.None;
 				interact.EnableAllCrosshairHand();
+				SetCrosshair(false);
 				ccdIK.solver.IKPositionWeight = 0.0f;
 				if(!string.IsNullOrEmpty(animName))
 				{
@@ -158,11 +169,6 @@ public class GraspTailVR : CrosshairHand {
 			{
 				ccdIK.solver.IKPosition = posCur;
 			}
-
-			if(ret)
-				SetCrosshairColor(colorTouch);
-			else
-				SetCrosshairColor(colorNotTouch);
 			break;
 		}
 	}

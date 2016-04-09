@@ -47,7 +47,7 @@ public class Interact : MonoBehaviour {
 		goGesture.transform.parent = gameObject.transform;
 
 		crosshairHand = FindObjectsOfType (typeof(CrosshairHand)) as CrosshairHand[];
-		(FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI).ShowSpeechRecognizer (true);
+		//(FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI).ShowSpeechRecognizer (true);
 		goPointer = GameObject.Find ("pointer");
 	}
 	

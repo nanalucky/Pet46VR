@@ -20,6 +20,8 @@ public class TouchVR : CrosshairHand {
 
 	public Color colorTouch = Color.white;
 	public Color colorNotTouch = Color.red;
+	private Sprite spriteTouch;
+	private Sprite spriteNotTouch;
 
 	private GameObject goDog;
 	private GameObject go;
@@ -55,7 +57,9 @@ public class TouchVR : CrosshairHand {
 		lastRotation = Quaternion.identity;
 		lastRotationTime = 0.0f;
 
-		SetCrosshairColor (colorNotTouch);
+		spriteTouch = Resources.Load<Sprite> ("UI/vrpointer2");
+		spriteNotTouch = Resources.Load<Sprite> ("UI/vrpointer1");
+		SetCrosshair (false);
 	}
 
 	public virtual bool IsInState()
@@ -86,6 +90,15 @@ public class TouchVR : CrosshairHand {
 		sr.color = color;
 	}
 
+	void SetCrosshair(bool bTouch)
+	{
+		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
+		if (bTouch) {
+			sr.sprite = spriteTouch;
+		} else {
+			sr.sprite = spriteNotTouch;
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -115,9 +128,9 @@ public class TouchVR : CrosshairHand {
 			}
 
 			if(ret)
-				SetCrosshairColor(colorTouch);
+				SetCrosshair(true);
 			else
-				SetCrosshairColor(colorNotTouch);
+				SetCrosshair(false);
 			break;
 		case State.Touch:
 			ret = false;
@@ -182,13 +195,8 @@ public class TouchVR : CrosshairHand {
 			{
 				state = State.None;
 				interact.EnableAllCrosshairHand();
+				SetCrosshair(false);
 			}
-
-			if(ret)
-				SetCrosshairColor(colorTouch);
-			else
-				SetCrosshairColor(colorNotTouch);
-
 			break;
 		case State.Enjoy:
 			ret = false;
@@ -202,9 +210,9 @@ public class TouchVR : CrosshairHand {
 			}
 
 			if(ret)
-				SetCrosshairColor(colorTouch);
+				SetCrosshair(true);
 			else
-				SetCrosshairColor(colorNotTouch);
+				SetCrosshair(false);
 			break;
 		case State.NotTouch:
 			ret = false;
@@ -250,9 +258,9 @@ public class TouchVR : CrosshairHand {
 			}
 
 			if(ret)
-				SetCrosshairColor(colorTouch);
+				SetCrosshair(true);
 			else
-				SetCrosshairColor(colorNotTouch);
+				SetCrosshair(false);
 			break;
 		}
 	}
