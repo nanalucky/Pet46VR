@@ -98,9 +98,17 @@ public class NoTouchGUI : MonoBehaviour
 	{
 		panel.SetActive (show);
 
-		if (goCrosshair != null) {
-			goCrosshair.SetActive(true);
-			goCrosshairTouch.SetActive(false);
+		if (show) {
+			if (goCrosshair != null) {
+				goCrosshair.SetActive (true);
+				//goCrosshairTouch.SetActive (false);
+			}
+		} else {
+			if (goCrosshair != null) {
+				goCrosshair.SetActive (false);
+				//goCrosshairTouch.SetActive (false);
+			}
+
 		}
 	}
 
@@ -122,6 +130,19 @@ public class NoTouchGUI : MonoBehaviour
 		else
 		{
 			btnSpeechRecognizer.SetActive(false);
+		}
+
+		if (show) {
+			if (goCrosshair != null) {
+				goCrosshair.SetActive (true);
+				//goCrosshairTouch.SetActive (false);
+			}
+		} else {
+			if (goCrosshair != null) {
+				goCrosshair.SetActive (false);
+				//goCrosshairTouch.SetActive (false);
+			}
+			
 		}
 
 		return 0.0f;

@@ -274,7 +274,7 @@ public class DogController : MonoBehaviour {
 		btnBall.interactable = true;
 		btnRecord.interactable = true;
 		btnPlay.interactable = true;
-		goCrosshair.SetActive (true);
+		goCrosshair.SetActive (false);
 		goCrosshairTouch.SetActive (false);
 		noTouchGUI.ShowSpeechRecognizer (false);
 	}

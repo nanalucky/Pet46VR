@@ -45,7 +45,7 @@ public class SpeechRecognizer : MonoBehaviour {
 	}
 
 	public void StartListening(){
-		toast.ShowToastMessage ("StartListening");
+		toast.ShowToastMessage ("请说出命令...");
 		bool isSupported = speechPlugin.CheckSpeechRecognizerSupport();
 		
 		if(isSupported){
@@ -60,7 +60,7 @@ public class SpeechRecognizer : MonoBehaviour {
 			//speech listener will stop automatically especially when you stop speaking or when you are speaking 
 			//for a long time
 		}else{
-			toast.ShowToastMessage("Speech Recognizer not supported by this Android device");
+			toast.ShowToastMessage("本手机不支持语音识别");
 			Debug.Log("Speech Recognizer not supported by this Android device ");
 		}
 	}
@@ -84,14 +84,14 @@ public class SpeechRecognizer : MonoBehaviour {
 	
 	private void onError(string data){
 		//toast.ShowToastMessage(String.Format("Status: {0}",data.ToString())); 
-		toast.ShowToastMessage(String.Format("Fail"));
+		toast.ShowToastMessage(String.Format("识别失败，请再来一次"));
 	}
 	
 	private void onResults(string data){
 		string[] results =  data.Split(',');
 		Debug.Log(" result length " + results.Length);
 		if (results.Length == 0) {
-			toast.ShowToastMessage (String.Format ("Fail"));
+			toast.ShowToastMessage (String.Format ("识别失败，请再来一次"));
 			return;
 		}
 		//when you set morethan 1 results index zero is always the closest to the words the you said
