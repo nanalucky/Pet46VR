@@ -28,7 +28,7 @@ public class NoTouchGUI : MonoBehaviour
 
 	private GameObject			goCrosshair;
 	private GameObject			goCrosshairTouch;
-	private GameObject			btnSpeechRecognizer;
+	private GameObject			panelSpeech;
 
 	/// <summary>
 	/// Initialization
@@ -56,7 +56,7 @@ public class NoTouchGUI : MonoBehaviour
 		var goDog = GameObject.FindGameObjectWithTag ("dog");
 		goCrosshair = goDog.GetComponent<DogController> ().goCrosshair;
 		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
-		btnSpeechRecognizer = goDog.GetComponent<DogController> ().btnSpeechRecognizer;
+		panelSpeech = goDog.GetComponent<DogController> ().panelSpeech;
 	}
 
 	/// <summary>
@@ -114,7 +114,7 @@ public class NoTouchGUI : MonoBehaviour
 
 	public float ShowSpeechRecognizer(bool show)
 	{
-		if ((show && btnSpeechRecognizer.activeInHierarchy) || (!show && !btnSpeechRecognizer.activeInHierarchy))
+		if ((show && panelSpeech.activeInHierarchy) || (!show && !panelSpeech.activeInHierarchy))
 		{
 			return 0.0f;
 		}
@@ -125,11 +125,11 @@ public class NoTouchGUI : MonoBehaviour
 			// refresh any children
 			BroadcastMessage ("OnRefresh", SendMessageOptions.DontRequireReceiver);
 			// show the menu elements and play the animation
-			btnSpeechRecognizer.SetActive (true);
+			panelSpeech.SetActive (true);
 		} 
 		else
 		{
-			btnSpeechRecognizer.SetActive(false);
+			panelSpeech.SetActive(false);
 		}
 
 		if (show) {

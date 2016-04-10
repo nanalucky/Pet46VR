@@ -33,7 +33,7 @@ public class DogController : MonoBehaviour {
 
 	public GameObject goCrosshair;
 	public GameObject goCrosshairTouch;
-	public GameObject btnSpeechRecognizer;
+	public GameObject panelSpeech;
 
 	private float lookatBodyWeight;
 	private float lookatHeadWeight;
