@@ -68,7 +68,7 @@ public class ThrowBallVR : MonoBehaviour {
 			//force *= forceMultiplier;
 			rb.isKinematic = false;
 			rb.AddForce(force);
-			this.gameObject.GetComponent<BallDogController>().enabled = true;					
+			this.gameObject.GetComponent<BallDogControllerVR>().enabled = true;					
 			this.enabled = false;
 			break;
 			
