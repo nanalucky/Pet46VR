@@ -234,11 +234,18 @@ public class DogController : MonoBehaviour {
 		animator.CrossFade("LeftRawUp", 0.25f);
     }
 
-	void ClearAll()
+	public void ClearAll()
 	{
 		Time.fixedDeltaTime = 0.0166666f;
 		GetComponent<StartIdle> ().enabled = false;
 		btnInteractOral.interactable = true;
+
+		// dog
+		animator.CrossFade ("empty", 0.2f, 1);
+		animator.CrossFade ("empty", 0.2f, 2);
+		animator.CrossFade ("empty", 0.2f, 3);
+		animator.CrossFade ("empty", 0.2f, 4);
+		animator.CrossFade ("empty", 0.2f, 5);
 
 		// robot
 		Destroy(GameObject.FindGameObjectWithTag("RobotScript"));

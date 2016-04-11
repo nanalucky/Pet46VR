@@ -26,6 +26,7 @@ public class NoTouchGUI : MonoBehaviour
 	//private bool				homeButtonPressed = false;
 	private float				homeButtonDownTime = 0.0f;
 
+	private GameObject			goDog;
 	private GameObject			goCrosshair;
 	private GameObject			goCrosshairTouch;
 	private GameObject			panelSpeech;
@@ -53,7 +54,7 @@ public class NoTouchGUI : MonoBehaviour
 
 	void Start()
 	{
-		var goDog = GameObject.FindGameObjectWithTag ("dog");
+		goDog = GameObject.FindGameObjectWithTag ("dog");
 		goCrosshair = goDog.GetComponent<DogController> ().goCrosshair;
 		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
 		panelSpeech = goDog.GetComponent<DogController> ().panelSpeech;
@@ -96,6 +97,10 @@ public class NoTouchGUI : MonoBehaviour
 	/// </summary>
 	void ShowRenderers(bool show)
 	{
+		if (show) {
+			goDog.GetComponent<DogController>().ClearAll();
+		}
+
 		panel.SetActive (show);
 
 		if (show) {
