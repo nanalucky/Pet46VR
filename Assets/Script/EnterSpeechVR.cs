@@ -28,7 +28,7 @@ public class EnterSpeechVR: EnterInteractVR {
 		
 		if (state == AIState.None)
 		{
-			(FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI).ShowSpeechRecognizer (true);
+			//(FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI).ShowSpeechRecognizer (true);
 			Destroy(gameObject);
 			return;
 		}

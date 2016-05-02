@@ -55,7 +55,7 @@ public class DogController : MonoBehaviour {
 		lookatBodyWeight = gameObject.GetComponent<LookAtIK> ().solver.bodyWeight;
 		lookatHeadWeight = gameObject.GetComponent<LookAtIK> ().solver.headWeight;
 		lookatEyeWeight = gameObject.GetComponent<LookAtIK> ().solver.eyesWeight;
-		noTouchGUI = FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI;
+		//noTouchGUI = FindObjectOfType (typeof(NoTouchGUI)) as NoTouchGUI;
 	}
 
 	void Update(){
@@ -282,9 +282,9 @@ public class DogController : MonoBehaviour {
 		btnBall.interactable = true;
 		btnRecord.interactable = true;
 		btnPlay.interactable = true;
-		goCrosshair.SetActive (false);
+		goCrosshair.SetActive (true);
 		goCrosshairTouch.SetActive (false);
-		noTouchGUI.ShowSpeechRecognizer (false);
+		//noTouchGUI.ShowSpeechRecognizer (false);
 	}
 
 	public void ToRobot()
@@ -293,7 +293,7 @@ public class DogController : MonoBehaviour {
 		Instantiate(Resources.Load("Prefabs/RobotScript"));
 		EnableMusicAndEffect (true);
 		btnRobot.interactable = false;
-		noTouchGUI.Show (false);
+		//noTouchGUI.Show (false);
 	}
 
 	public void ToInteract()
@@ -304,7 +304,7 @@ public class DogController : MonoBehaviour {
 
 		btnInteract.interactable = false;
 		btnInteractOral.interactable = false;
-		noTouchGUI.Show (false);
+		//noTouchGUI.Show (false);
 	}
 
 	public void ToInteract2()
@@ -334,7 +334,7 @@ public class DogController : MonoBehaviour {
 		Instantiate(Resources.Load("Prefabs/EnterBall"));
 		EnableMusicAndEffect (true);
 		//btnBall.interactable = false;
-		noTouchGUI.Show (false);
+		//noTouchGUI.Show (false);
 	}
 
 	public void ToExercise()
@@ -363,7 +363,7 @@ public class DogController : MonoBehaviour {
 		
 		btnInteract.interactable = false;
 		btnInteractOral.interactable = false;
-		noTouchGUI.Show (false);
+		//noTouchGUI.Show (false);
 	}
 
 	public void PlayAudioEffect(string clipname)

@@ -54,6 +54,17 @@ public class ThrowBallVR : MonoBehaviour {
 		OVRTouchpad.TouchHandler -= LocalTouchEventCallback;
 	}
 
+	public void ThrowBall()
+	{
+		Vector3 force = cameraController.centerEyeAnchor.rotation * (new Vector3(0,0,forceMagnitude));
+		//force /= Time.deltaTime;
+		//force *= forceMultiplier;
+		rb.isKinematic = false;
+		rb.AddForce(force);
+		this.gameObject.GetComponent<BallDogControllerVR>().enabled = true;					
+		this.enabled = false;
+	}
+
 	void LocalTouchEventCallback(object sender, EventArgs args)
 	{
 		var touchArgs = (OVRTouchpad.TouchArgs)args;
@@ -63,13 +74,7 @@ public class ThrowBallVR : MonoBehaviour {
 		{
 		case OVRTouchpad.TouchEvent.SingleTap:
 			//Debug.Log("SINGLE CLICK\n");
-			Vector3 force = cameraController.centerEyeAnchor.rotation * (new Vector3(0,0,forceMagnitude));
-			//force /= Time.deltaTime;
-			//force *= forceMultiplier;
-			rb.isKinematic = false;
-			rb.AddForce(force);
-			this.gameObject.GetComponent<BallDogControllerVR>().enabled = true;					
-			this.enabled = false;
+			ThrowBall();
 			break;
 			
 		case OVRTouchpad.TouchEvent.Left:
