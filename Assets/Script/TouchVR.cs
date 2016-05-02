@@ -28,6 +28,7 @@ public class TouchVR : CrosshairHand {
 	private Collider co;
 	private SkinnedCollisionHelper skinHelper;
 	private GameObject goCrosshairTouch;
+	private GameObject goPointer;
 
 	private float timeInTouch;
 	private float timeNotInTouch;
@@ -49,6 +50,7 @@ public class TouchVR : CrosshairHand {
 		skinHelper = go.AddComponent<SkinnedCollisionHelper> ();
 		skinHelper.updateOncePerFrame = false;
 		co = go.GetComponent<MeshCollider> ();
+		goPointer = goDog.GetComponent<DogController> ().goPointer;
 		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
 		interact = FindObjectOfType (typeof(Interact)) as Interact;
 
@@ -71,9 +73,9 @@ public class TouchVR : CrosshairHand {
 
 	bool InTouch()
 	{
-		if (lastRotation == Quaternion.identity || goCrosshairTouch.transform.rotation != lastRotation) 
+		if (lastRotation == Quaternion.identity || goPointer.transform.rotation != lastRotation) 
 		{
-			lastRotation = goCrosshairTouch.transform.rotation;
+			lastRotation = goPointer.transform.rotation;
 			lastRotationTime = Time.time;
 			return true;
 		}
@@ -90,6 +92,12 @@ public class TouchVR : CrosshairHand {
 		sr.color = color;
 	}
 
+
+	void SetCrosshairPosition(Vector3 pos)
+	{
+		goCrosshairTouch.transform.position = pos;
+	}
+
 	void SetCrosshair(bool bTouch)
 	{
 		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
@@ -102,8 +110,8 @@ public class TouchVR : CrosshairHand {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 fwd = goCrosshairTouch.transform.TransformDirection(Vector3.forward);
-		Ray ray = new Ray (goCrosshairTouch.transform.position, fwd);
+		Vector3 fwd = goPointer.transform.TransformDirection(Vector3.forward);
+		Ray ray = new Ray (goPointer.transform.position, fwd);
 		RaycastHit hit;
 		bool ret;// = co.Raycast (ray, out hit, 100.0f) && Input.GetMouseButton(0);
 		switch (state) 
@@ -115,13 +123,16 @@ public class TouchVR : CrosshairHand {
 				skinHelper.UpdateCollisionMesh();
 				ret = co.Raycast (ray, out hit, 100.0f);
 				lastInTouch = ret;
+
+				if(ret)
+					SetCrosshairPosition(hit.point - fwd * 0.05f);
 			}
 
 			if(ret)
 			{
 				timeInTouch = Time.time;
 				state = State.Touch;
-				lastRotation = goCrosshairTouch.transform.rotation;
+				lastRotation = goPointer.transform.rotation;
 				lastRotationTime = Time.time;
 				lastInTouch = false;
 				interact.DisableAllCrosshairHandButThis(this);
@@ -130,7 +141,7 @@ public class TouchVR : CrosshairHand {
 			if(ret)
 				SetCrosshair(true);
 			else
-				SetCrosshair(false);
+				SetCrosshair(false);	
 			break;
 		case State.Touch:
 			ret = false;
@@ -139,6 +150,8 @@ public class TouchVR : CrosshairHand {
 
 			if(ret && InTouch())
 			{
+				SetCrosshairPosition(hit.point - fwd * 0.05f);
+
 				if(Time.time - timeInTouch >= timeIntoEnjoy)
 				{
 					state = State.Enjoy;
@@ -210,7 +223,10 @@ public class TouchVR : CrosshairHand {
 			}
 
 			if(ret)
+			{
 				SetCrosshair(true);
+				SetCrosshairPosition(hit.point - fwd * 0.05f);
+			}
 			else
 				SetCrosshair(false);
 			break;
@@ -258,7 +274,10 @@ public class TouchVR : CrosshairHand {
 			}
 
 			if(ret)
+			{
 				SetCrosshair(true);
+				SetCrosshairPosition(hit.point - fwd * 0.05f);
+			}
 			else
 				SetCrosshair(false);
 			break;

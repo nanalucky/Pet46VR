@@ -6404,6 +6404,7 @@ MonoBehaviour:
   btnRobot: {fileID: 1859711800}
   btnInteract: {fileID: 1933123624}
   btnBall: {fileID: 507420512}
+  goPointer: {fileID: 1358564734}
   goCrosshair: {fileID: 193741361}
   goCrosshairTouch: {fileID: 2021578500}
   panelSpeech: {fileID: 270604706}

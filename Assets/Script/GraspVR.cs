@@ -34,6 +34,7 @@ public class GraspVR : CrosshairHand {
 	private Collider co;
 	private SkinnedCollisionHelper skinHelper;
 	private GameObject goCrosshairTouch;
+	private GameObject goPointer;
 
 	private LimbIK limbIK;
 	private float lastTouchTime;
@@ -52,6 +53,7 @@ public class GraspVR : CrosshairHand {
 		skinHelper = go.AddComponent<SkinnedCollisionHelper> ();
 		skinHelper.updateOncePerFrame = false;
 		co = go.GetComponent<MeshCollider> ();
+		goPointer = goDog.GetComponent<DogController> ().goPointer;
 		goCrosshairTouch = goDog.GetComponent<DogController> ().goCrosshairTouch;
 		interact = FindObjectOfType (typeof(Interact)) as Interact;
 
@@ -82,6 +84,11 @@ public class GraspVR : CrosshairHand {
 		sr.color = color;
 	}
 
+	void SetCrosshairPosition(Vector3 pos)
+	{
+		goCrosshairTouch.transform.position = pos;
+	}
+
 	void SetCrosshair(bool bTouch)
 	{
 		SpriteRenderer sr = goCrosshairTouch.GetComponent<SpriteRenderer> ();
@@ -94,8 +101,8 @@ public class GraspVR : CrosshairHand {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 fwd = goCrosshairTouch.transform.TransformDirection(Vector3.forward);
-		Ray ray = new Ray (goCrosshairTouch.transform.position, fwd);
+		Vector3 fwd = goPointer.transform.TransformDirection(Vector3.forward);
+		Ray ray = new Ray (goPointer.transform.position, fwd);
 		RaycastHit hit;
 		bool ret;// = co.Raycast (ray, out hit, 100.0f) && Input.GetMouseButton(0);
 		switch (state) {
@@ -106,6 +113,9 @@ public class GraspVR : CrosshairHand {
 				skinHelper.UpdateCollisionMesh();
 				ret = co.Raycast (ray, out hit, 100.0f);
 				lastInTouch = ret;
+
+				if(ret)
+					SetCrosshairPosition(hit.point - fwd * 0.05f);
 			}
 
 			if(ret)
@@ -128,6 +138,8 @@ public class GraspVR : CrosshairHand {
 
 			if(ret)
 			{
+				SetCrosshairPosition(hit.point - fwd * 0.05f);
+
 				if(Time.time - lastTouchTime >= touchTime)
 				{
 					state = State.Grasp;
@@ -148,6 +160,9 @@ public class GraspVR : CrosshairHand {
 			ret = false;
 			skinHelper.UpdateCollisionMesh();
 			ret = co.Raycast (ray, out hit, 100.0f);
+
+			if(ret)
+				SetCrosshairPosition(hit.point - fwd * 0.05f);
 
 			Ray rayCur = ray;
 			Vector3 posCur = PetHelper.ProjectPointLine(limbIK.solver.IKPosition, rayCur.GetPoint(0), rayCur.GetPoint(100));

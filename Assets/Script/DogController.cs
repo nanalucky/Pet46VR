@@ -31,6 +31,7 @@ public class DogController : MonoBehaviour {
 	public Button btnInteract;
 	public Button btnBall;
 
+	public GameObject goPointer;
 	public GameObject goCrosshair;
 	public GameObject goCrosshairTouch;
 	public GameObject panelSpeech;
