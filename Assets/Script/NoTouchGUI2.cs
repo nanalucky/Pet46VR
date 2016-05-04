@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Runtime.InteropServices; // required for DllImport
 
 
 public class NoTouchGUI2 : MonoBehaviour {
@@ -72,6 +73,20 @@ public class NoTouchGUI2 : MonoBehaviour {
 	{
 		transform.position = cameraController.transform.position;
 		transform.rotation = cameraController.transform.rotation;
+
+		if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.RightShoulder])) {
+			StartListening();
+		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.A])) {
+			ApplyState (State.Robot);
+		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.B])) {
+			ApplyState (State.Interact);
+		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.X])) {
+			ApplyState (State.PlayBall);
+		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.Y])) {
+			ApplyState (State.Speech);
+		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.RStick])) {
+			ApplyState (State.ThrowBall);
+		}
 	}
 	
 	public void StartListening(){
@@ -183,7 +198,7 @@ public class NoTouchGUI2 : MonoBehaviour {
 		}	
 		
 	}
-	
+
 	void ApplyState(State state)
 	{
 		switch (state) 
