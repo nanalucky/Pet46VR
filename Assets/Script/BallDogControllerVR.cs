@@ -19,22 +19,28 @@ public class BallDogControllerVR : MonoBehaviour {
 	public float eulerSmooth = 0.2f;
 	public float force = 10;
 	public float turnEulerYSpeed = 480.0f;
+	public float dogDestDistance = 1.0f;
 
 	private GameObject goDog;
 	private GameObject goBall;
 	private GameObject goMouth;
-	private GameObject goDest;
+	//private GameObject goDest;
 	private LookAtIK lookatIK;
 	private float timeEndPlay;
 	private float velY;
 	private float mouthDistance;
+
+	[HideInInspector]
+	public Vector3 dogDestPosition;
+	[HideInInspector]
+	public Vector3 dogDestEuler; 
 
 	// Use this for initialization
 	void Start () {
 		goDog = GameObject.FindGameObjectWithTag ("dog");
 		goBall = GameObject.FindGameObjectWithTag ("Ball");
 		goMouth = GameObject.FindGameObjectWithTag ("Mouth");
-		goDest = GameObject.Find ("DogPosInteract");
+		//goDest = GameObject.Find ("DogPosInteract");
 		lookatIK = goDog.GetComponent<LookAtIK> ();
 
 		state = State.Look;
@@ -42,6 +48,11 @@ public class BallDogControllerVR : MonoBehaviour {
 		Vector3 bodyToMouth = goMouth.transform.position - goDog.transform.position;
 		bodyToMouth.y = 0.0f;
 		mouthDistance = bodyToMouth.magnitude; 
+
+		GameObject mainCamera = GameObject.Find("OVRCameraRig");
+		dogDestPosition = mainCamera.transform.position + mainCamera.transform.TransformDirection(Vector3.forward) * dogDestDistance;
+		dogDestPosition.y = goDog.transform.position.y;
+		dogDestEuler = Quaternion.LookRotation (mainCamera.transform.TransformDirection (Vector3.back)).eulerAngles;
 	}
 	
 	// Update is called once per frame
@@ -123,7 +134,7 @@ public class BallDogControllerVR : MonoBehaviour {
 			}
 			break;
 		case State.back:
-			direction = goDest.transform.position - goDog.transform.position;
+			direction = dogDestPosition - goDog.transform.position;
 			direction.y = 0.0f;
 			direction.Normalize();
 			distance = direction.magnitude;
@@ -132,14 +143,14 @@ public class BallDogControllerVR : MonoBehaviour {
 				delta = distance;
 			goDog.transform.position = goDog.transform.position + direction * delta;
 			
-			direction = goDest.transform.position - goDog.transform.position;
+			direction = dogDestPosition - goDog.transform.position;
 			direction.y = 0.0f;
 			distance = direction.magnitude;
 			direction.Normalize();
 			
 			if(distance < 0.05f)
 			{
-				goDog.transform.position = goDest.transform.position;
+				goDog.transform.position = dogDestPosition;
 				state = State.Play;
 				goDog.GetComponent<Animator>().CrossFade("PlayBall", 0.25f);
 				timeEndPlay = 0.0f;

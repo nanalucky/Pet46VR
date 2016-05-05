@@ -9,6 +9,11 @@ public class EnterSpeechVR: EnterInteractVR {
 		aiMoveCamera.Start (this);
 		lastAI = new AIStandUp ();
 		lastAI.Start (this);
+
+		GameObject mainCamera = GameObject.Find("OVRCameraRig");
+		dogDestPosition = mainCamera.transform.position + mainCamera.transform.TransformDirection(Vector3.forward) * dogDestDistance;
+		dogDestPosition.y = GameObject.FindGameObjectWithTag ("dog").transform.position.y;
+		dogDestEuler = Quaternion.LookRotation (mainCamera.transform.TransformDirection (Vector3.back)).eulerAngles;
 	}
 	
 	// Update is called once per frame

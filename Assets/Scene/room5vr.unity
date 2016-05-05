@@ -6627,7 +6627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneMin: {x: 4.5, y: 0, z: 1.5}
-  zoneMax: {x: 9.5, y: 0, z: 5}
+  zoneMax: {x: 9.5, y: 0, z: 7}
   walkSpeed: .850000024
   runSpeed: 1.79999995
   rushSpeed: 1.5
@@ -10715,7 +10715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bb0a17b6a704298b65be4fb08ef480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetButton: 3
+  resetButton: 12
 --- !u!114 &891599715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10739,7 +10739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  toggleButton: 0
+  toggleButton: 8
 --- !u!82 &891599717
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10882,6 +10882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129dee2a2eb005741abf1cf576696208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraSpeed: 1
 --- !u!1 &891657981
 GameObject:
   m_ObjectHideFlags: 0

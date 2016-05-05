@@ -24,8 +24,8 @@ public class EnterInteractVR : MonoBehaviour {
 			controller = ctrl;
 			mainCamera = GameObject.Find("OVRCameraRig");
 
-			mainCamera.transform.position = GameObject.Find ("CameraPosInteract").transform.position;
-			mainCamera.transform.rotation = GameObject.Find ("CameraPosInteract").transform.rotation;
+			//mainCamera.transform.position = GameObject.Find ("CameraPosInteract").transform.position;
+			//mainCamera.transform.rotation = GameObject.Find ("CameraPosInteract").transform.rotation;
 		}
 
 		public override bool IsFinished()
@@ -75,7 +75,7 @@ public class EnterInteractVR : MonoBehaviour {
 	public class AITurn : AI
 	{
 		private GameObject go;
-		private GameObject goDest;
+		//private GameObject goDest;
 
 		private bool inMove = false;
 		private float dstEulerY;
@@ -84,10 +84,10 @@ public class EnterInteractVR : MonoBehaviour {
 		{
 			controller = ctrl;
 			go = GameObject.FindGameObjectWithTag ("dog");
-			goDest = GameObject.Find ("DogPosInteract");
+			//goDest = GameObject.Find ("DogPosInteract");
 
 			inMove = true;
-			Vector3 direction = (goDest.transform.position - go.transform.position).normalized;
+			Vector3 direction = (ctrl.dogDestPosition - go.transform.position).normalized;
 			if (direction != Vector3.zero)
 				dstEulerY = Quaternion.LookRotation (direction).eulerAngles.y;
 			else
@@ -133,14 +133,14 @@ public class EnterInteractVR : MonoBehaviour {
 	public class AIStay : AI
 	{
 		private GameObject go;
-		private GameObject goDest;
+		//private GameObject goDest;
 		private float endTime;
 
 		public override void Start(EnterInteractVR ctrl)
 		{
 			controller = ctrl;
 			go = GameObject.FindGameObjectWithTag ("dog");
-			goDest = GameObject.Find ("DogPosInteract");
+			//goDest = GameObject.Find ("DogPosInteract");
 			if(!go.GetComponent<DogController>().IsStand())
 				go.GetComponent<Animator> ().CrossFade ("Stand", 0.25f);
 			endTime = Time.time + ctrl.stayTime;
@@ -156,7 +156,7 @@ public class EnterInteractVR : MonoBehaviour {
 
 		public override AIState GetNextState()
 		{
-			if (go.transform.position == goDest.transform.position)
+			if (go.transform.position == controller.dogDestPosition)
 				return AIState.Sit;
 
 			return AIState.Run;
@@ -167,7 +167,7 @@ public class EnterInteractVR : MonoBehaviour {
 	{
 		private GameObject mainCamera;
 		private GameObject go;
-		private GameObject goDest;
+		//private GameObject goDest;
 
 		private bool inMove;
 		private Vector3 startPosition;
@@ -178,14 +178,14 @@ public class EnterInteractVR : MonoBehaviour {
 			controller = ctrl;
 			mainCamera = GameObject.Find("OVRCameraRig");
 			go = GameObject.FindGameObjectWithTag ("dog");
-			goDest = GameObject.Find("DogPosInteract");
+			//goDest = GameObject.Find("DogPosInteract");
 
 			startPosition = go.transform.position;
 			time = 0.0f;
-			if ((goDest.transform.position - startPosition).magnitude <= 0.01f) 
+			if ((controller.dogDestPosition - startPosition).magnitude <= 0.01f) 
 			{
 				inMove = false;
-				go.transform.position = goDest.transform.position;			
+				go.transform.position = controller.dogDestPosition;			
 			}
 			else
 			{
@@ -201,10 +201,10 @@ public class EnterInteractVR : MonoBehaviour {
 
 			time = time + Time.deltaTime;
 			go.transform.position = startPosition + go.transform.rotation * (new Vector3 (0, 0, time * go.GetComponent<DogController> ().runSpeed));
-			if ((go.transform.position - startPosition).magnitude > (goDest.transform.position - startPosition).magnitude) 
+			if ((go.transform.position - startPosition).magnitude > (controller.dogDestPosition - startPosition).magnitude) 
 			{
 				inMove = false;
-				go.transform.position = goDest.transform.position;
+				go.transform.position = controller.dogDestPosition;
 			}
 
 			//mainCamera.transform.rotation = Quaternion.LookRotation ((go.GetComponent<DogController>().GetDogPivot() - mainCamera.transform.position).normalized);
@@ -224,7 +224,7 @@ public class EnterInteractVR : MonoBehaviour {
 	public class AITurn2 : AI
 	{
 		private GameObject go;
-		private GameObject goDest;
+		//private GameObject goDest;
 		
 		private bool inMove = false;
 		private float dstEulerY;
@@ -233,10 +233,10 @@ public class EnterInteractVR : MonoBehaviour {
 		{
 			controller = ctrl;
 			go = GameObject.FindGameObjectWithTag ("dog");
-			goDest = GameObject.Find ("DogPosInteract");
+			//goDest = GameObject.Find ("DogPosInteract");
 			
 			inMove = true;
-			dstEulerY = goDest.transform.rotation.eulerAngles.y;
+			dstEulerY = controller.dogDestEuler.y;
 			if(Mathf.Abs(dstEulerY - go.transform.rotation.eulerAngles.y) < 0.1f)
 			{
 				inMove = false;
@@ -379,16 +379,27 @@ public class EnterInteractVR : MonoBehaviour {
 	public float turnEulerYSpeed = 480.0f;
 	public float stayTime = 1.0f;
 	public float stay2Time = 0.5f;
+	public float dogDestDistance = 1.0f;
 
 	public AI aiMoveCamera;
 	protected AI lastAI;
-	
+
+	[HideInInspector]
+	public Vector3 dogDestPosition;
+	[HideInInspector]
+	public Vector3 dogDestEuler; 
+
 	// Use this for initialization
 	void Start () {
 		aiMoveCamera = new AIMoveCamera ();
 		aiMoveCamera.Start (this);
 		lastAI = new AIStandUp ();
 		lastAI.Start (this);
+
+		GameObject mainCamera = GameObject.Find("OVRCameraRig");
+		dogDestPosition = mainCamera.transform.position + mainCamera.transform.TransformDirection(Vector3.forward) * dogDestDistance;
+		dogDestPosition.y = GameObject.FindGameObjectWithTag ("dog").transform.position.y;
+		dogDestEuler = Quaternion.LookRotation (mainCamera.transform.TransformDirection (Vector3.back)).eulerAngles;
 	}
 	
 	// Update is called once per frame

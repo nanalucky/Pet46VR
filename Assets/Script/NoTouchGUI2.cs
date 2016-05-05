@@ -84,7 +84,7 @@ public class NoTouchGUI2 : MonoBehaviour {
 			ApplyState (State.PlayBall);
 		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.Y])) {
 			ApplyState (State.Speech);
-		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.RStick])) {
+		} else if (Input.GetButtonDown (OVRGamepadController.ButtonNames [(int)OVRGamepadController.Button.LeftShoulder])) {
 			ApplyState (State.ThrowBall);
 		}
 	}

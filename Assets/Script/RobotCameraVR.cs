@@ -8,7 +8,7 @@ public class RobotCameraVR : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.Find("OVRCameraRig");
-		mainCamera.transform.position = GameObject.Find("CameraPosRobot").transform.position;
-		mainCamera.transform.rotation = GameObject.Find("CameraPosRobot").transform.rotation;
+		//mainCamera.transform.position = GameObject.Find("CameraPosRobot").transform.position;
+		//mainCamera.transform.rotation = GameObject.Find("CameraPosRobot").transform.rotation;
 	}
 }
